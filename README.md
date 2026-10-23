@@ -21,7 +21,7 @@ I developed a healthcare AI system for heart disease risk prediction using neura
 
 - **AI / Machine Learning Engineer roles:** building, evaluating, and shipping models and data pipelines
 - **Research Assistant positions:** machine learning, deep learning, and healthcare AI
-- **Postgraduate study:** Master's programs in AI, machine learning, or data science, including scholarship-funded places internationally
+- **Postgraduate study:** Master's programs in artificial intelligence, machine learning, data science, and applied AI, including scholarship-funded places internationally
 
 ---
 
