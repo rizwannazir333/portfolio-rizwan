@@ -13,7 +13,25 @@
 
 AI Engineer and BSc Software Engineering graduate with hands-on experience building end-to-end **machine learning and deep learning pipelines** in Python (TensorFlow, Keras, scikit-learn).
 
-I developed a healthcare AI system for heart disease risk prediction using neural networks and classical machine learning, and I currently work as an AI Engineer Intern on data preprocessing, feature engineering, model tuning, and evaluation. I'm seeking a full-time AI Engineer role where I can build reliable, production-ready AI solutions.
+I developed a healthcare AI system for heart disease risk prediction using neural networks and classical machine learning, and I currently work as an AI Engineer Intern on data preprocessing, feature engineering, model tuning, and evaluation. I'm looking for opportunities where I can build reliable AI systems and grow as a researcher.
+
+---
+
+## Open To
+
+- **AI / Machine Learning Engineer roles:** building, evaluating, and shipping models and data pipelines
+- **Research Assistant positions:** machine learning, deep learning, and healthcare AI
+- **Postgraduate study:** Master's programs in AI, machine learning, or data science, including scholarship-funded places internationally
+
+---
+
+## What I Bring
+
+- **End-to-end delivery:** from cleaning data and training models to a working web application with a database
+- **Careful evaluation:** comparing several models and looking beyond accuracy to recall, precision, F1-score, and confusion matrices
+- **Reproducible, documented work:** fixed random seeds, a model card, dataset checks, and automated tests on GitHub
+- **Honest reporting:** limitations and responsible-use notes are written down, not hidden
+- **Remote collaboration:** working with Git and GitHub as an AI Engineer Intern
 
 ---
 
@@ -73,6 +91,6 @@ I developed a healthcare AI system for heart disease risk prediction using neura
 - Built and compared three models on 13 clinical features: Logistic Regression, Random Forest, and a neural network (ANN with dropout) in TensorFlow/Keras.
 - Combined the model probabilities into a Low / Medium / High risk score and served it through a Flask web app with MySQL-backed prediction history.
 - Cleaned and scaled the data, and wrote a seeded evaluation script that reports accuracy, precision, recall, F1-score, ROC-AUC, and confusion matrices.
-- Documented limitations and responsible-use considerations, plus planned improvements such as cross-validation, calibration, explainability, and fairness checks.
+- Found that about half of the records had missing values and documented the dataset, a model card, limitations, and planned improvements such as imputation, cross-validation, calibration, explainability, and fairness checks.
 
 **Technologies:** Python, TensorFlow, Keras, scikit-learn, Pandas, NumPy, Matplotlib, Flask, MySQL
