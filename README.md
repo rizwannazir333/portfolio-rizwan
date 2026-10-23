@@ -17,6 +17,23 @@ I developed a healthcare AI model for multiclass heart disease prediction using 
 
 ---
 
+## Research Interests
+
+- **Healthcare AI:** machine learning for clinical risk prediction and decision support
+- **Deep learning for tabular and medical data:** neural network design, regularization, and evaluation beyond accuracy
+- **Responsible and explainable AI:** model transparency, fairness across patient groups, and safe use of AI in health settings
+
+---
+
+## Academic Profile
+
+- **Degree:** BSc Software Engineering, Virtual University of Pakistan (graduated August 2026)
+- **Relevant coursework:** Artificial Intelligence, Machine Learning, Data Structures & Algorithms, Database Systems, Software Engineering
+- **Final year project:** deep learning for heart disease prediction, with a Flask and MySQL web application
+- **Languages:** English (Professional)
+
+---
+
 ## Technical Skills
 
 | Area | Skills |
@@ -50,29 +67,12 @@ I developed a healthcare AI model for multiclass heart disease prediction using 
 
 ### Heart Disease Prediction Using Deep Learning
 
-**Healthcare AI · Multiclass Classification · Final Year Project · Jul 2025 – Jul 2026**  
+**Healthcare AI · Clinical Risk Prediction · Final Year Project · Jul 2025 – Jul 2026**  
 [View repository](https://github.com/rizwannazir333/heart-disease-prediction-final-year-project)
 
-- Designed and trained a multi-layer deep neural network (ANN) in TensorFlow/Keras to classify multiclass clinical outcomes from medical data.
-- Built the data preprocessing pipeline: missing value imputation, normalization, standard scaling, categorical encoding, and feature selection.
-- Ran systematic experiments on hidden layer configurations, dropout rates, learning rates, and optimizers to improve accuracy and reduce overfitting.
-- Evaluated per-class performance using confusion matrices, precision, recall, F1-score, and accuracy.
+- Built and compared three models on 13 clinical features: Logistic Regression, Random Forest, and a neural network (ANN with dropout) in TensorFlow/Keras.
+- Combined the model probabilities into a Low / Medium / High risk score and served it through a Flask web app with MySQL-backed prediction history.
+- Cleaned and scaled the data, and wrote a seeded evaluation script that reports accuracy, precision, recall, F1-score, ROC-AUC, and confusion matrices.
+- Documented limitations and responsible-use considerations, plus planned improvements such as cross-validation, calibration, explainability, and fairness checks.
 
-**Technologies:** Python, TensorFlow, Keras, scikit-learn, Pandas, NumPy, Matplotlib, Seaborn
-
----
-
-## Education
-
-### Bachelor of Science (BSc) in Software Engineering
-
-**Virtual University of Pakistan, Lahore**  
-**Graduated August 2026**
-
-Relevant coursework: Artificial Intelligence, Machine Learning, Data Structures & Algorithms, Database Systems, Software Engineering
-
----
-
-## Languages
-
-- English (Professional)
+**Technologies:** Python, TensorFlow, Keras, scikit-learn, Pandas, NumPy, Matplotlib, Flask, MySQL
