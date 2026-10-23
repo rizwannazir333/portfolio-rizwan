@@ -1,131 +1,89 @@
 # Rizwan Ali
 
-## QA & Food Safety Professional | Food Technologist
+## Entry-Level AI Engineer | Machine Learning | Deep Learning | Python
 
-📍 Al Ain, United Arab Emirates  
-📞 +971 5657 67631  
+📍 Abu Dhabi, United Arab Emirates  
+📞 +971 56 576 7631  
 ✉️ [mrizwan8499@gmail.com](mailto:mrizwan8499@gmail.com)  
-🔗 [LinkedIn](https://linkedin.com/in/rizwan-ali-foods-qa-qc)
+🔗 [LinkedIn](https://linkedin.com/in/rizwan-ali-ai-engineer) · [GitHub](https://github.com/rizwannazir333)
 
 ---
 
 ## About Me
 
-Food Technologist with over **9 years of international experience** in food production, specializing in **Quality Assurance, Food Safety, and Food Technology**.
+Entry-level AI Engineer and BSc Software Engineering graduate with hands-on experience building end-to-end **machine learning and deep learning pipelines** in Python (TensorFlow, Keras, scikit-learn).
 
-Experienced in Quality and Food Safety Management System implementation, process control, audit management, document control, HACCP planning, Halal compliance, supplier approval, CAPA management, and continual improvement.
-
-A results-oriented professional with strong communication, leadership, and team-management skills, committed to maintaining high standards in dynamic food production environments.
+I developed a healthcare AI model for multiclass heart disease prediction using neural networks, and I currently work as an AI Engineer Intern on data preprocessing, feature engineering, model tuning, and evaluation. I'm seeking a full-time AI Engineer role where I can build reliable, production-ready AI solutions.
 
 ---
 
-## Core Skills
+## Technical Skills
 
-- Quality Management Systems
-- Food Safety Management Systems
-- FSSC 22000
-- HACCP
-- Halal Management Systems
-- ISO 9001
-- GMP and SSOP
-- Internal and External Audits
-- CAPA and Root Cause Analysis
-- Process Control and Verification
-- Supplier Approval and Evaluation
-- Food Defence and Food Fraud
-- Integrated Pest Management
-- Traceability and FIFO/FEFO
-- Product, Water, and Environmental Testing
-- Team Management and Staff Training
-- Document Control and SOP Development
-- Poultry Primary and Further Processing
+| Area | Skills |
+| --- | --- |
+| **Core Focus** | Machine Learning, Deep Learning, Neural Networks, Predictive Modeling, Healthcare AI, Model Evaluation |
+| **Programming** | Python, SQL |
+| **AI / ML Frameworks** | TensorFlow, Keras, scikit-learn |
+| **Deep Learning** | Artificial Neural Networks (ANN), Architecture Design, Dropout, Regularization, Loss Functions, Optimizers, Hyperparameter Tuning |
+| **Machine Learning** | Supervised Learning, Classification, Regression, Feature Engineering, Feature Selection |
+| **Data Processing** | Pandas, NumPy, EDA, Data Cleaning, Missing Value Imputation, Normalization, Standardization, Categorical Encoding |
+| **Evaluation Metrics** | Confusion Matrix, Precision, Recall, F1-Score, Accuracy |
+| **Tools & Visualization** | Git, GitHub, Jupyter Notebook, Google Colab, VS Code, Matplotlib, Seaborn |
 
 ---
 
-## Professional Experience
+## Work Experience
 
-### Quality Assurance Supervisor
+### AI Engineer Intern
 
-**Al Khazna Poultry — IFFCO Group, UAE**  
-**December 2021 – Present**
+**TechGeneyes — Remote, Pakistan**  
+**August 2026 – Present**
 
-- Developed and implemented sampling and testing programs for raw materials, work-in-progress, and finished poultry products.
-- Monitored process parameters across live bird receiving, slaughter, evisceration, chilling, deboning, portioning, marination, further processing, and packing.
-- Verified GMP areas, CCPs, metal detection, carcass grading, trimming, hygiene monitoring, and product labelling.
-- Investigated non-conformances and customer complaints through root cause analysis and corrective and preventive actions.
-- Delivered training on FSSC 22000, ISO 9001, HACCP, Halal requirements, IPM, GMP, SSOP, and site procedures.
-- Participated in HACCP hazard analysis and the preparation, implementation, verification, and review of HACCP plans.
-- Developed site-level SOPs, work instructions, process flow diagrams, monitoring records, and check sheets.
-- Planned and conducted internal audits covering food safety, Halal, hygiene, sanitation, IPM, regulatory, and GSO requirements.
-- Ensured compliance with FSSC 22000, HACCP, Halal Management Systems, QMS, GMP, SSOP, IPM, UAE regulations, and ADAFSA requirements.
-- Performed trend analysis of deviations, defects, microbiological results, physico-chemical results, audit findings, and non-conformances.
-- Coordinated with production and maintenance teams to resolve quality and food safety issues.
-- Managed and guided quality and operations personnel across primary and further processing areas.
-- Supervised receiving, storage, and dispatch activities, ensuring traceability, temperature control, FIFO/FEFO, and contamination prevention.
+- Build, train, and evaluate end-to-end machine learning and deep learning models using Python, TensorFlow, Keras, and scikit-learn.
+- Develop data preprocessing pipelines, exploratory data analysis (EDA), and feature engineering to improve model performance and generalization.
+- Perform hyperparameter tuning and evaluate models using precision, recall, F1-score, accuracy, and confusion matrices to reduce overfitting.
+- Use Git and GitHub for version control and collaborative experiment tracking.
 
-### Quality Assurance Executive
+---
 
-**Seasons Foods Pvt. Ltd. — Lahore, Pakistan**  
-**January 2017 – November 2021**
+## Projects
 
-- Oversaw end-to-end poultry primary processing, including live bird receiving, ante-mortem inspection, stunning, slaughter, bleeding, scalding, defeathering, evisceration, washing, inspection, trimming, grading, chilling, and cold storage.
-- Supervised further processing activities including deboning, cutting, mincing, marination, tumbling, coating, forming, pre-frying, cooling, packing, metal detection, labelling, storage, and dispatch.
-- Monitored CCPs, OPRPs, GMPs, hygiene standards, and process control points throughout production.
-- Reviewed and updated SOPs, operational procedures, work instructions, risk assessments, and hazard-control documentation.
-- Conducted quality, food safety, and environmental testing of poultry products, water, and process conditions.
-- Applied chemical and mathematical calculations related to formulas, percentages, production factors, yield, and product pick-up.
-- Led internal inspections and audits covering food safety, Halal, animal welfare, food defence, food fraud, hygiene, and regulatory controls.
-- Assessed and approved suppliers of raw poultry, ingredients, and packaging materials.
-- Supervised raw material, work-in-progress, and finished-product storage and dispatch.
-- Implemented traceability, FIFO/FEFO, temperature control, and cross-contamination prevention practices.
-- Conducted root cause analysis and implemented CAPA for recurring quality and food safety issues.
-- Delivered food safety, hygiene, Halal, GMP, CCP monitoring, and personal hygiene training to production staff.
-- Maintained compliance with FSSC 22000, HACCP, YUM QSA & FSA, SYDEX, Animal Welfare requirements, Halal Management Standard PS:3733, and Punjab Pure Food Rules.
+### Heart Disease Prediction Using Deep Learning
+
+**Healthcare AI · Multiclass Classification · Final Year Project · Jul 2025 – Jul 2026**  
+[View repository](https://github.com/rizwannazir333/heart-disease-prediction-final-year-project)
+
+- Designed and trained a multi-layer deep neural network (ANN) in TensorFlow/Keras to classify multiclass clinical outcomes from medical data.
+- Built the data preprocessing pipeline: missing value imputation, normalization, standard scaling, categorical encoding, and feature selection.
+- Ran systematic experiments on hidden layer configurations, dropout rates, learning rates, and optimizers to improve accuracy and reduce overfitting.
+- Evaluated per-class performance using confusion matrices, precision, recall, F1-score, and accuracy.
+
+**Technologies:** Python, TensorFlow, Keras, scikit-learn, Pandas, NumPy, Matplotlib, Seaborn
 
 ---
 
 ## Education
 
-### BS Hons. Food Science & Technology
+### Bachelor of Science (BSc) in Software Engineering
 
-**Government College University**  
-Faisalabad, Pakistan  
-**2017**
+**Virtual University of Pakistan, Lahore**  
+**Graduated August 2026**
 
----
-
-## Professional Courses and Certifications
-
-- Lead Auditor – FSSC 22000 — Bureau Veritas
-- Lead Auditor – Halal PS:3733 — Global Halal Services
-- HACCP Level 3 Award – Food Manufacturing — RSPH
-- Internal Auditor – ISO 9001:2015 — Bureau Veritas
-- Awareness Training – IFS v8
-- Awareness Training – Integrated Pest Management — Bureau Veritas
-- CPD Training – QA, Meat Safety & Further Processing — UVAS
+Relevant coursework: Artificial Intelligence, Machine Learning, Data Structures & Algorithms, Database Systems, Software Engineering
 
 ---
 
-## Professional Strengths
+## Earlier Career: Food Safety & Quality Assurance
 
-- Strong knowledge of food safety and quality systems
-- Practical experience in poultry primary and further processing
-- Effective audit planning and execution
-- Strong problem-solving and analytical abilities
-- Experienced in cross-functional coordination
-- Skilled in employee training and team supervision
-- Excellent communication and documentation skills
-- Commitment to continual improvement and regulatory compliance
+Before moving into AI, I spent over nine years in food production quality and food safety, which built strong habits in process control, documentation, root cause analysis, and working to strict standards.
+
+- **Quality Assurance Supervisor**, Al Khazna Poultry (IFFCO Group), UAE — from December 2021
+- **Quality Assurance Executive**, Seasons Foods Pvt. Ltd., Lahore — January 2017 to November 2021
+- BS Hons. Food Science & Technology, Government College University Faisalabad (2017)
+- Certifications include FSSC 22000 Lead Auditor, Halal PS:3733 Lead Auditor, HACCP Level 3 (RSPH), and ISO 9001:2015 Internal Auditor
 
 ---
 
-## Areas of Expertise
+## Languages
 
-```text
-Quality Assurance        Food Safety Management
-Poultry Processing       HACCP and CCP Monitoring
-Halal Compliance         Internal Auditing
-GMP and SSOP             CAPA Management
-Supplier Management      Product Testing
-Process Verification     Staff Training
-Traceability             Regulatory Compliance
+- English (Professional)
