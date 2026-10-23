@@ -48,7 +48,7 @@ I developed a healthcare AI system for heart disease risk prediction using neura
 - **Degree:** BSc Software Engineering, Virtual University of Pakistan (graduated August 2026)
 - **Relevant coursework:** Artificial Intelligence, Machine Learning, Data Structures & Algorithms, Database Systems, Software Engineering
 - **Final year project:** deep learning for heart disease prediction, with a Flask and MySQL web application
-- **Languages:** English (Professional)
+- **Languages:** English (fluent, spoken and written)
 
 ---
 
