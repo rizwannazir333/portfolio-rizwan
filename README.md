@@ -1,6 +1,6 @@
 # Rizwan Ali
 
-## Entry-Level AI Engineer | Machine Learning | Deep Learning | Python
+## AI Engineer | Machine Learning | Deep Learning | Python
 
 📍 Abu Dhabi, United Arab Emirates  
 📞 +971 56 576 7631  
