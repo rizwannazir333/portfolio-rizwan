@@ -73,17 +73,6 @@ Relevant coursework: Artificial Intelligence, Machine Learning, Data Structures 
 
 ---
 
-## Earlier Career: Food Safety & Quality Assurance
-
-Before moving into AI, I spent over nine years in food production quality and food safety, which built strong habits in process control, documentation, root cause analysis, and working to strict standards.
-
-- **Quality Assurance Supervisor**, Al Khazna Poultry (IFFCO Group), UAE — from December 2021
-- **Quality Assurance Executive**, Seasons Foods Pvt. Ltd., Lahore — January 2017 to November 2021
-- BS Hons. Food Science & Technology, Government College University Faisalabad (2017)
-- Certifications include FSSC 22000 Lead Auditor, Halal PS:3733 Lead Auditor, HACCP Level 3 (RSPH), and ISO 9001:2015 Internal Auditor
-
----
-
 ## Languages
 
 - English (Professional)
