@@ -11,7 +11,7 @@
 
 ## About Me
 
-Entry-level AI Engineer and BSc Software Engineering graduate with hands-on experience building end-to-end **machine learning and deep learning pipelines** in Python (TensorFlow, Keras, scikit-learn).
+AI Engineer and BSc Software Engineering graduate with hands-on experience building end-to-end **machine learning and deep learning pipelines** in Python (TensorFlow, Keras, scikit-learn).
 
 I developed a healthcare AI model for multiclass heart disease prediction using neural networks, and I currently work as an AI Engineer Intern on data preprocessing, feature engineering, model tuning, and evaluation. I'm seeking a full-time AI Engineer role where I can build reliable, production-ready AI solutions.
 
