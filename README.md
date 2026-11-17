@@ -55,4 +55,3 @@ Relevant courses: Artificial Intelligence, Machine Learning, Data Structures and
 | Machine learning | scikit-learn, TensorFlow, Keras, cross-validation, model evaluation, permutation importance |
 | LLMs | Ollama, LangChain, LangGraph |
 | Data and tools | Pandas, NumPy, Matplotlib, Seaborn, Flask, MySQL, Git, GitHub Actions, Jupyter, Colab |
-| English | IELTS 6.0 (CEFR B2) |
