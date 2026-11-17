@@ -17,7 +17,7 @@ Abu Dhabi, UAE · rizwan_nazir@163.com · [LinkedIn](https://linkedin.com/in/riz
 
 ### [Heart Disease Risk Prediction Using Machine Learning and Deep Learning](https://github.com/rizwannazir333/heart-disease-prediction-final-year-project)
 
-Final Year Project, BS (Hons) Software Engineering · Grade A · Jul 2025 – Jul 2026
+Final Year Project, BS Hons Software Engineering · Grade A · Jul 2025 – Jul 2026
 
 - Compared Logistic Regression, Random Forest and a neural network with dropout (TensorFlow/Keras) on 13 clinical features from 597 patient records, averaging their probabilities into Low, Medium and High risk levels.
 - Cross-validated ROC-AUC of 0.90 and accuracy of 0.83 (repeated stratified 5-fold cross-validation), with recall, F1-score and confusion matrices.
@@ -43,7 +43,7 @@ An offline email-drafting and grammar-correction assistant on a 4-bit quantized 
 
 ## Education
 
-**BS (Hons) Software Engineering, Virtual University of Pakistan** · 2023 – 2026 · CGPA 3.66 / 4.00 · Final year project: Grade A
+**BS Hons Software Engineering, Virtual University of Pakistan** · 2023 – 2026 · CGPA 3.66 / 4.00 · Final year project: Grade A
 
 Relevant courses: Artificial Intelligence, Machine Learning, Data Structures and Algorithms, Database Systems, Software Engineering.
 
