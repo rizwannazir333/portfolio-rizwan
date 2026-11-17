@@ -52,6 +52,6 @@ Relevant courses: Artificial Intelligence, Machine Learning, Data Structures and
 | Area | Skills |
 | --- | --- |
 | Programming | Python, SQL |
-| Machine learning | scikit-learn, TensorFlow, Keras, cross-validation, model evaluation, permutation importance |
+| Machine learning | scikit-learn, TensorFlow, Keras, cross-validation, model evaluation |
 | LLMs | Ollama, LangChain, LangGraph |
 | Data and tools | Pandas, NumPy, Matplotlib, Seaborn, Flask, MySQL, Git, GitHub Actions, Jupyter, Colab |
