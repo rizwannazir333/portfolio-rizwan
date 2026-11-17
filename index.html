@@ -89,6 +89,7 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:.85rem;border-top:1p
     <a class="me" href="#top">Rizwan Ali</a>
     <ul>
       <li><a href="#projects">Projects</a></li>
+      <li class="opt"><a href="#next">Next steps</a></li>
       <li class="opt"><a href="#experience">Experience</a></li>
       <li class="opt"><a href="#education">Education</a></li>
       <li><a href="assets/Rizwan_Ali_CV.pdf">CV</a></li>
@@ -184,6 +185,16 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:.85rem;border-top:1p
     </article>
   </section>
 
+  <section id="next" aria-labelledby="next-h">
+    <h2 id="next-h">What I want to work on next</h2>
+    <p>My final year project left me with more questions than answers. These are the ones I would like to take into a Master's thesis:</p>
+    <ul class="pts">
+      <li><b>Explanations for single patients.</b> Permutation importance tells me what matters on average. A doctor needs to know why the model flagged this particular patient, so I want to compare per-patient methods such as SHAP and check whether their explanations stay stable.</li>
+      <li><b>Probabilities that mean what they say.</b> My risk levels are fixed cut-offs on an averaged probability. I want to learn how to calibrate models so that a predicted 70% risk really corresponds to about 70% of patients.</li>
+      <li><b>Will it work somewhere else?</b> I have not yet checked performance across age and sex groups or on data from another hospital. Testing for this kind of failure is, I think, the most important step before any clinical model is trusted.</li>
+    </ul>
+  </section>
+
   <section id="experience" aria-labelledby="experience-h">
     <h2 id="experience-h">Experience</h2>
     <div class="row"><h3>AI Engineer Intern, TechGeneyes</h3><span class="when">Aug 2026 – Present · Remote</span></div>
@@ -220,6 +231,6 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:.85rem;border-top:1p
   </section>
 </main>
 
-<footer><div class="wrap">© 2026 Rizwan Ali</div></footer>
+<footer><div class="wrap">Rizwan Ali · Last updated November 2026</div></footer>
 </body>
 </html>
