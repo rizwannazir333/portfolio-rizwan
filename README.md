@@ -8,10 +8,10 @@ Abu Dhabi, UAE · rizwan_nazir@163.com · [LinkedIn](https://linkedin.com/in/riz
 
 ## Research interests
 
-- Machine learning for healthcare and clinical risk prediction
-- Interpretable and explainable models
-- Learning from imbalanced and incomplete data
-- Large language models and NLP for health text
+- **Clinical prediction:** calibrated risk models that stay reliable across patient groups and hospitals
+- **Explainable ML:** faithful, stable explanations for individual predictions, not only global ones
+- **Imperfect data:** missing values, class imbalance and small datasets in medical records
+- **LLMs for health:** language models and NLP for extracting information from clinical text
 
 ## Projects
 
