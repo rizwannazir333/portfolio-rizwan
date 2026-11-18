@@ -20,7 +20,7 @@ Abu Dhabi, UAE · rizwan_nazir@163.com · [LinkedIn](https://linkedin.com/in/riz
 Final Year Project, BS Hons Software Engineering · Grade A · Jul 2025 – Jul 2026
 
 - Compared Logistic Regression, Random Forest and a neural network with dropout (TensorFlow/Keras) on 13 clinical features from 597 patient records, averaging their probabilities into Low, Medium and High risk levels.
-- Cross-validated ROC-AUC of 0.90 and accuracy of 0.83 (repeated stratified 5-fold cross-validation), with recall, F1-score and confusion matrices.
+- With repeated stratified 5-fold cross-validation, logistic regression and the random forest reached ROC-AUC 0.90 (accuracy 0.82–0.83); recall stayed below precision, the main weakness to address.
 - Compared dropping incomplete records with median imputation inside each fold: similar scores, about half the variation between folds.
 - Permutation feature importance on held-out folds; a model card, data tests, and CI on GitHub Actions; a Flask and MySQL web app.
 
@@ -56,3 +56,4 @@ Relevant courses: Artificial Intelligence, Machine Learning, Data Structures and
 | ML libraries | scikit-learn, TensorFlow, Keras, Pandas, NumPy, Matplotlib, Seaborn |
 | LLMs | Few-shot prompting, structured output, tool-using agents; Ollama, LangChain, LangGraph |
 | Software | Python, SQL, Flask, MySQL, Git, GitHub Actions (CI), pytest, Jupyter |
+| English | B2 (CEFR) in listening, reading, speaking and writing |
