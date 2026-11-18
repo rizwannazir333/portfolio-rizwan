@@ -37,9 +37,15 @@ An offline email-drafting and grammar-correction assistant on a 4-bit quantized 
 
 **AI Engineer Intern, TechGeneyes** · Remote · Aug 2026 – Present
 
-- Develop and evaluate machine learning and deep learning models in Python using scikit-learn and TensorFlow/Keras.
-- Clean and preprocess data, carry out exploratory data analysis and engineer features.
-- Tune hyperparameters and report results with precision, recall, F1-score and confusion matrices.
+Developing, evaluating and automating machine learning and deep learning solutions.
+
+- Develop, train and evaluate machine learning models with scikit-learn and deep learning models with TensorFlow/Keras.
+- Prepare, clean and explore datasets, engineer features and tune hyperparameters through a systematic experimental workflow.
+- Improve model generalisation with regularisation techniques such as dropout.
+- Automate repetitive data preparation, model training and evaluation tasks with Python scripts, making experiments faster and reproducible.
+- Evaluate and report model performance with precision, recall, F1-score and confusion matrices rather than accuracy alone, to understand where and why models make errors and to support model selection decisions.
+
+Tools: Python, scikit-learn, TensorFlow, Keras, Pandas, NumPy, Jupyter
 
 ## Education
 
