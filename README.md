@@ -2,7 +2,7 @@
 
 **Portfolio website: https://rizwannazir333.github.io/portfolio-rizwan/**
 
-Software Engineering graduate (BS Hons, CGPA 3.66/4.00) and AI Engineer Intern. I build and evaluate machine learning models, with a focus on healthcare data and on understanding why a model makes its predictions. Applying for a Master's in AI, Machine Learning or Data Science for 2027.
+Software Engineering graduate (BS Hons, CGPA 3.66/4.00) and AI Engineer Intern. I build and evaluate machine learning models, with a focus on healthcare data and on understanding why a model makes its predictions. Applying for a Master's in AI, Machine Learning or Computer Science for 2027.
 
 Abu Dhabi, UAE · rizwan_nazir@163.com · [LinkedIn](https://linkedin.com/in/rizwan-ali-ai-engineer) · [GitHub](https://github.com/rizwannazir333) · [Academic CV (PDF)](assets/Rizwan_Ali_CV_Photo.pdf) · [Europass CV (PDF)](assets/Rizwan_Ali_Europass_CV_Photo.pdf)
 
@@ -18,6 +18,10 @@ Abu Dhabi, UAE · rizwan_nazir@163.com · [LinkedIn](https://linkedin.com/in/riz
 ### [Heart Disease Risk Prediction Using Machine Learning and Deep Learning](https://github.com/rizwannazir333/heart-disease-prediction-final-year-project)
 
 Final Year Project, BS Hons Software Engineering · Grade A · Jul 2025 – Jul 2026
+
+![HeartCare web app: prediction result](assets/heartcare_result.jpg)
+
+[Watch the 16-second demo (MP4)](assets/heartcare_demo.mp4)
 
 - Compared Logistic Regression, Random Forest and a neural network with dropout (TensorFlow/Keras) on 13 clinical features from 597 patient records, averaging their probabilities into Low, Medium and High risk levels.
 - With repeated stratified 5-fold cross-validation, logistic regression and the random forest reached ROC-AUC 0.90 (accuracy 0.82–0.83); recall stayed below precision, the main weakness to address.

@@ -9,7 +9,7 @@
 if(p!=='light'&&p!=='dark')p='auto';var r=document.documentElement;r.setAttribute('data-theme-pref',p);
 if(p!=='auto')r.setAttribute('data-theme',p);})();
 </script>
-<meta name="description" content="Rizwan Ali: Software Engineering graduate (CGPA 3.66/4.00) working on machine learning for healthcare, explainable models and large language models.">
+<meta name="description" content="Rizwan Ali: Software Engineering graduate (CGPA 3.66/4.00) and AI Engineer Intern working on machine learning for healthcare, explainable models and large language models. Applying for a Master's in AI, Machine Learning or Computer Science.">
 <meta property="og:title" content="Rizwan Ali | Machine Learning">
 <meta property="og:description" content="Machine learning for healthcare, explainable models and large language models. Projects, CV and contact.">
 <meta property="og:type" content="website">
@@ -103,6 +103,15 @@ th{color:var(--muted);font-weight:600}
 .series code{font:.85rem var(--mono);color:var(--muted)}
 .interests{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 24px;padding:0;margin:0;list-style:none}
 .interests li{padding-left:14px;border-left:2px solid var(--accent)}
+.skillgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.skill{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px}
+.skill h3{font-size:.98rem}.skill .chips{margin-top:10px}
+.lang{margin:16px 0 0}
+.demo video{width:100%;height:auto;border:1px solid var(--line);border-radius:8px;background:#000;display:block}
+.shots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:10px}
+.shots a{display:block}.shots img{width:100%;height:auto;border:1px solid var(--line);border-radius:6px;display:block}
+.shots figcaption{margin-top:4px}
+@media (max-width:560px){.shots{grid-template-columns:1fr}}
 dl.skills{display:grid;grid-template-columns:max-content 1fr;gap:6px 20px;margin:0}
 dl.skills dt{font-weight:600}
 dl.skills dd{margin:0;color:var(--fg)}
@@ -152,7 +161,7 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:.85rem;border-top:1p
     <div>
     <h1>Rizwan Ali</h1>
     <p class="lead">Software Engineering graduate and AI Engineer Intern. I build and evaluate machine learning models, with a focus on healthcare data and on understanding why a model makes its predictions.</p>
-    <p class="meta">BS Hons Software Engineering, CGPA 3.66 / 4.00 · Abu Dhabi, UAE · Applying for a Master's in AI / Data Science (2027)</p>
+    <p class="meta">BS Hons Software Engineering, CGPA 3.66 / 4.00 · Abu Dhabi, UAE · Applying for a Master's in AI, Machine Learning or Computer Science (2027)</p>
     <div class="actions">
       <a class="btn primary" href="assets/Rizwan_Ali_CV_Photo.pdf" download>
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 2h14v2H5z"/></svg>Academic CV</a>
@@ -198,6 +207,18 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:.85rem;border-top:1p
       <div class="row"><h3>Heart Disease Risk Prediction Using Machine Learning and Deep Learning</h3><span class="when">Jul 2025 – Jul 2026</span></div>
       <p class="sub">Final Year Project, BS Hons Software Engineering · Grade A</p>
       <p>I compared Logistic Regression, Random Forest and a neural network (TensorFlow/Keras, with dropout) on 13 clinical features from 597 patient records. The three probabilities are averaged into a Low, Medium or High risk level and shown in a Flask web application.</p>
+      <figure class="demo">
+        <video controls muted playsinline preload="none" poster="assets/heartcare_demo_poster.jpg" width="1280" height="760">
+          <source src="assets/heartcare_demo.mp4" type="video/mp4">
+          Your browser cannot play this video. <a href="assets/heartcare_demo.mp4">Download the demo (MP4)</a>.
+        </video>
+        <figcaption>Demo (16 s): log in, enter a patient record, get a risk level with each model's probability, and view the saved history. The patients are sample records from the project dataset.</figcaption>
+      </figure>
+      <div class="shots">
+        <figure><a href="assets/heartcare_form.jpg"><img src="assets/heartcare_form.jpg" alt="HeartCare web app form for entering 13 clinical measurements" loading="lazy" width="1400" height="875"></a><figcaption>Patient data form</figcaption></figure>
+        <figure><a href="assets/heartcare_result.jpg"><img src="assets/heartcare_result.jpg" alt="Prediction result showing High risk, 99.36% overall probability, and a bar chart of the three models' probabilities" loading="lazy" width="1400" height="875"></a><figcaption>Result with each model's probability</figcaption></figure>
+        <figure><a href="assets/heartcare_history.jpg"><img src="assets/heartcare_history.jpg" alt="Table of past predictions stored in MySQL with name, age, sex, risk, probability and date" loading="lazy" width="1400" height="547"></a><figcaption>Prediction history in MySQL</figcaption></figure>
+      </div>
       <div class="stats">
         <div class="stat"><b>0.90</b><span>ROC-AUC, logistic regression and random forest</span></div>
         <div class="stat"><b>0.82–0.83</b><span>Accuracy, cross-validated</span></div>
@@ -272,14 +293,15 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:.85rem;border-top:1p
 
   <section aria-labelledby="skills-h">
     <h2 id="skills-h">Skills and languages</h2>
-    <dl class="skills">
-      <dt>ML methods</dt><dd>Logistic regression, random forests, neural networks, cross-validation, imputation</dd>
-      <dt>Evaluation</dt><dd>ROC-AUC, precision, recall, F1-score, confusion matrices, permutation feature importance</dd>
-      <dt>ML libraries</dt><dd>scikit-learn, TensorFlow, Keras, Pandas, NumPy, Matplotlib, Seaborn</dd>
-      <dt>LLMs</dt><dd>Few-shot prompting, structured output, tool-using agents; Ollama, LangChain, LangGraph</dd>
-      <dt>Software</dt><dd>Python, SQL, Flask, MySQL, Git, GitHub Actions (CI), pytest, Jupyter</dd>
-      <dt>English</dt><dd>B2 (CEFR) in listening, reading, speaking and writing</dd>
-    </dl>
+    <div class="skillgrid">
+      <div class="skill"><h3>Machine learning</h3><ul class="chips"><li>Logistic regression</li><li>Random forests</li><li>Feature engineering</li><li>Hyperparameter tuning</li><li>Cross-validation</li><li>Missing-data imputation</li></ul></div>
+      <div class="skill"><h3>Deep learning</h3><ul class="chips"><li>Neural networks</li><li>Dropout regularisation</li><li>TensorFlow</li><li>Keras</li></ul></div>
+      <div class="skill"><h3>Model evaluation and explainability</h3><ul class="chips"><li>ROC-AUC</li><li>Precision and recall</li><li>F1-score</li><li>Confusion matrices</li><li>Permutation feature importance</li><li>Model cards</li></ul></div>
+      <div class="skill"><h3>LLMs and agents</h3><ul class="chips"><li>Few-shot prompting</li><li>Structured output</li><li>Tool-using agents</li><li>Human-in-the-loop</li><li>Ollama</li><li>LangChain</li><li>LangGraph</li><li>Pydantic</li></ul></div>
+      <div class="skill"><h3>Data science</h3><ul class="chips"><li>Python</li><li>Pandas</li><li>NumPy</li><li>scikit-learn</li><li>Matplotlib</li><li>Seaborn</li><li>Jupyter</li></ul></div>
+      <div class="skill"><h3>Software engineering and automation</h3><ul class="chips"><li>Flask</li><li>SQL</li><li>MySQL</li><li>Git and GitHub</li><li>GitHub Actions (CI)</li><li>pytest</li><li>Python automation scripts</li></ul></div>
+    </div>
+    <p class="lang"><b>Languages:</b> English, B2 (CEFR) in listening, reading, speaking and writing.</p>
   </section>
 
   <section id="next" aria-labelledby="next-h">
@@ -314,7 +336,7 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:.85rem;border-top:1p
 
   <section id="contact" class="contact" aria-labelledby="contact-h">
     <h2 id="contact-h">Contact</h2>
-    <p>I am applying for Master's programmes in AI, Machine Learning and Data Science for 2027 and would be glad to hear about thesis or research assistant opportunities.</p>
+    <p>I am applying for Master's programmes in Artificial Intelligence, Machine Learning and Computer Science for 2027 and would be glad to hear about thesis or research assistant opportunities.</p>
     <p>Email: <a href="mailto:rizwan_nazir@163.com">rizwan_nazir@163.com</a></p>
     <p>Phone / WhatsApp: +971 56 576 7631</p>
     <p><a href="https://linkedin.com/in/rizwan-ali-ai-engineer">LinkedIn</a> · <a href="https://github.com/rizwannazir333">GitHub</a> · <a href="#cv">CVs (Academic and Europass)</a></p>
