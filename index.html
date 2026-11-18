@@ -34,11 +34,24 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--link);outline-offse
 nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 nav .wrap{display:flex;gap:18px;align-items:center;justify-content:space-between;height:54px}
 nav .me{font:700 1.05rem var(--serif);color:var(--fg);text-decoration:none}
-nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0;font-size:.92rem}
+nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0;font-size:.92rem;align-items:center}
 nav ul a{color:var(--muted);text-decoration:none}
 nav ul a:hover{color:var(--fg)}
-@media (max-width:560px){nav ul li.opt{display:none}}
-header{padding-block:56px 36px}
+@media (max-width:640px){nav ul li.opt{display:none}}
+.cvmenu{position:relative}
+.cvmenu summary{list-style:none;cursor:pointer;color:var(--muted);display:flex;align-items:center;gap:4px}
+.cvmenu summary::-webkit-details-marker{display:none}
+.cvmenu summary:hover,.cvmenu[open] summary{color:var(--fg)}
+.cvmenu summary svg{width:12px;height:12px;fill:currentColor;transition:transform .15s}
+.cvmenu[open] summary svg{transform:rotate(180deg)}
+.cvmenu .menu{position:absolute;right:0;top:calc(100% + 10px);min-width:230px;background:var(--surface);border:1px solid var(--line);border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.12);padding:6px;display:grid}
+.cvmenu .menu a{color:var(--fg);text-decoration:none;padding:8px 10px;border-radius:6px;display:flex;justify-content:space-between;gap:12px}
+.cvmenu .menu a:hover,.cvmenu .menu a:focus-visible{background:var(--chip)}
+.cvmenu .menu small{color:var(--muted)}
+.cvmenu .menu hr{border:0;border-top:1px solid var(--line);margin:4px 2px}
+header{padding-block:48px 34px;display:flex;gap:28px;align-items:center}
+.portrait{width:148px;height:148px;border-radius:50%;object-fit:cover;flex:none;border:3px solid var(--surface);box-shadow:0 0 0 1px var(--line)}
+@media (max-width:560px){header{flex-direction:column;align-items:flex-start;gap:18px;padding-top:32px}.portrait{width:112px;height:112px}}
 h1{font:700 clamp(2.2rem,6vw,3rem)/1.1 var(--serif);margin:0 0 10px;color:var(--accent)}
 .lead{font-size:1.15rem;color:var(--fg);max-width:62ch;margin:0 0 6px}
 .meta{color:var(--muted);margin:0 0 22px}
@@ -80,6 +93,10 @@ dl.skills dt{font-weight:600}
 dl.skills dd{margin:0;color:var(--fg)}
 @media (max-width:520px){.interests{grid-template-columns:1fr}dl.skills{grid-template-columns:1fr}dl.skills dd{margin-bottom:8px}}
 .contact p{margin:4px 0}
+.cvcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.cvcard{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px}
+.cvcard h3{margin-bottom:4px}.cvcard p{margin:0 0 12px;color:var(--muted);font-size:.92rem}
+.cvcard .actions{gap:8px}.cvcard .btn{padding:7px 12px;font-size:.86rem}
 footer{padding-block:28px 40px;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
 </style>
 </head>
@@ -88,11 +105,22 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:.85rem;border-top:1p
   <div class="wrap">
     <a class="me" href="#top">Rizwan Ali</a>
     <ul>
-      <li><a href="#projects">Projects</a></li>
-      <li class="opt"><a href="#next">Next steps</a></li>
-      <li class="opt"><a href="#experience">Experience</a></li>
+      <li class="opt"><a href="#about">About</a></li>
       <li class="opt"><a href="#education">Education</a></li>
-      <li><a href="assets/Rizwan_Ali_CV.pdf">CV</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li class="opt"><a href="#experience">Experience</a></li>
+      <li>
+        <details class="cvmenu">
+          <summary>CV <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg></summary>
+          <div class="menu">
+            <a href="assets/Rizwan_Ali_CV.pdf">Academic CV <small>PDF</small></a>
+            <a href="assets/Rizwan_Ali_Europass_CV.pdf">Europass CV <small>PDF</small></a>
+            <hr>
+            <a href="assets/Rizwan_Ali_CV_Photo.pdf">Academic CV <small>with photo</small></a>
+            <a href="assets/Rizwan_Ali_Europass_CV_Photo.pdf">Europass CV <small>with photo</small></a>
+          </div>
+        </details>
+      </li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -100,6 +128,8 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:.85rem;border-top:1p
 
 <main id="top" class="wrap">
   <header>
+    <img class="portrait" src="assets/Rizwan_Ali_photo.jpg" alt="Portrait of Rizwan Ali" width="148" height="148">
+    <div>
     <h1>Rizwan Ali</h1>
     <p class="lead">Software Engineering graduate and AI Engineer Intern. I build and evaluate machine learning models, with a focus on healthcare data and on understanding why a model makes its predictions.</p>
     <p class="meta">BS Hons Software Engineering, CGPA 3.66 / 4.00 · Abu Dhabi, UAE · Applying for a Master's in AI / Data Science (2027)</p>
@@ -113,9 +143,25 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:.85rem;border-top:1p
       <a class="btn" href="https://linkedin.com/in/rizwan-ali-ai-engineer">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 11-.01 5 2.5 2.5 0 01.01-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V21H9z"/></svg>LinkedIn</a>
     </div>
+    </div>
   </header>
 
-  <section aria-labelledby="interests">
+  <section id="about" aria-labelledby="about-h">
+    <h2 id="about-h">About me</h2>
+    <p>I am a Software Engineering graduate (BS Hons, Virtual University of Pakistan, CGPA 3.66/4.00) and an AI Engineer Intern at TechGeneyes, interested in building machine learning models that are reliable, explainable and useful in the real world.</p>
+    <p>My final year project (Grade A) predicted heart disease risk from 597 patient records. I compared logistic regression, a random forest and a neural network with repeated stratified cross-validation, reaching ROC-AUC 0.90; handled missing data without leakage; measured feature importance; and documented limitations in a model card. Recall stayed below precision, which taught me that honest evaluation matters as much as accuracy.</p>
+    <p>In my internship I develop and evaluate machine learning and deep learning models, and I also build local LLM applications with LangChain and LangGraph.</p>
+    <p style="margin-bottom:0">I am seeking a Master's degree in Computer Science, Artificial Intelligence or Machine Learning to research trustworthy AI, especially explainable and clinical machine learning.</p>
+  </section>
+
+  <section id="education" aria-labelledby="education-h">
+    <h2 id="education-h">Education</h2>
+    <div class="row"><h3>BS Hons Software Engineering, Virtual University of Pakistan</h3><span class="when">2023 – 2026</span></div>
+    <p class="sub">CGPA 3.66 / 4.00 · Final year project: Grade A · Completed August 2026</p>
+    <p style="margin:0">Relevant courses: Artificial Intelligence, Machine Learning, Data Structures and Algorithms, Database Systems, Software Engineering.</p>
+  </section>
+
+  <section id="research" aria-labelledby="interests">
     <h2 id="interests">Research interests</h2>
     <ul class="interests">
       <li><b>Clinical ML.</b> Reliable, well-calibrated risk prediction that holds up across patient groups and hospitals.</li>
@@ -188,16 +234,6 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:.85rem;border-top:1p
     </article>
   </section>
 
-  <section id="next" aria-labelledby="next-h">
-    <h2 id="next-h">What I want to work on next</h2>
-    <p>My final year project left me with more questions than answers. These are the ones I would like to take into a Master's thesis:</p>
-    <ul class="pts">
-      <li><b>Explanations for single patients.</b> Permutation importance tells me what matters on average. A doctor needs to know why the model flagged this particular patient, so I want to compare per-patient methods such as SHAP and check whether their explanations stay stable.</li>
-      <li><b>Probabilities that mean what they say.</b> My risk levels are fixed cut-offs on an averaged probability. I want to learn how to calibrate models so that a predicted 70% risk really corresponds to about 70% of patients.</li>
-      <li><b>Will it work somewhere else?</b> I have not yet checked performance across age and sex groups or on data from another hospital. Testing for this kind of failure is, I think, the most important step before any clinical model is trusted.</li>
-    </ul>
-  </section>
-
   <section id="experience" aria-labelledby="experience-h">
     <h2 id="experience-h">Experience</h2>
     <div class="row"><h3>AI Engineer Intern, TechGeneyes</h3><span class="when">Aug 2026 – Present · Remote</span></div>
@@ -214,15 +250,8 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:.85rem;border-top:1p
     </ul>
   </section>
 
-  <section id="education" aria-labelledby="education-h">
-    <h2 id="education-h">Education</h2>
-    <div class="row"><h3>BS Hons Software Engineering, Virtual University of Pakistan</h3><span class="when">2023 – 2026</span></div>
-    <p class="sub">CGPA 3.66 / 4.00 · Final year project: Grade A · Completed August 2026</p>
-    <p style="margin:0">Relevant courses: Artificial Intelligence, Machine Learning, Data Structures and Algorithms, Database Systems, Software Engineering.</p>
-  </section>
-
   <section aria-labelledby="skills-h">
-    <h2 id="skills-h">Skills</h2>
+    <h2 id="skills-h">Skills and languages</h2>
     <dl class="skills">
       <dt>ML methods</dt><dd>Logistic regression, random forests, neural networks, cross-validation, imputation</dd>
       <dt>Evaluation</dt><dd>ROC-AUC, precision, recall, F1-score, confusion matrices, permutation feature importance</dd>
@@ -233,16 +262,53 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:.85rem;border-top:1p
     </dl>
   </section>
 
+  <section id="next" aria-labelledby="next-h">
+    <h2 id="next-h">Future research directions</h2>
+    <p>My final year project left me with more questions than answers. These are the ones I would like to take into a Master's thesis:</p>
+    <ul class="pts">
+      <li><b>Explanations for single patients.</b> Permutation importance tells me what matters on average. A doctor needs to know why the model flagged this particular patient, so I want to compare per-patient methods such as SHAP and check whether their explanations stay stable.</li>
+      <li><b>Probabilities that mean what they say.</b> My risk levels are fixed cut-offs on an averaged probability. I want to learn how to calibrate models so that a predicted 70% risk really corresponds to about 70% of patients.</li>
+      <li><b>Will it work somewhere else?</b> I have not yet checked performance across age and sex groups or on data from another hospital. Testing for this kind of failure is, I think, the most important step before any clinical model is trusted.</li>
+    </ul>
+  </section>
+
+  <section id="cv" aria-labelledby="cv-h">
+    <h2 id="cv-h">CV</h2>
+    <div class="cvcards">
+      <div class="cvcard">
+        <h3>Academic CV</h3>
+        <p>One page, research-focused, for Master's applications.</p>
+        <div class="actions">
+          <a class="btn primary" href="assets/Rizwan_Ali_CV.pdf" download>Download</a>
+          <a class="btn" href="assets/Rizwan_Ali_CV_Photo.pdf" download>With photo</a>
+        </div>
+      </div>
+      <div class="cvcard">
+        <h3>Europass CV</h3>
+        <p>Standard European format, for EU universities and employers.</p>
+        <div class="actions">
+          <a class="btn primary" href="assets/Rizwan_Ali_Europass_CV.pdf" download>Download</a>
+          <a class="btn" href="assets/Rizwan_Ali_Europass_CV_Photo.pdf" download>With photo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="contact" class="contact" aria-labelledby="contact-h">
     <h2 id="contact-h">Contact</h2>
     <p>I am applying for Master's programmes in AI, Machine Learning and Data Science for 2027 and would be glad to hear about thesis or research assistant opportunities.</p>
     <p>Email: <a href="mailto:rizwan_nazir@163.com">rizwan_nazir@163.com</a></p>
     <p>Phone / WhatsApp: +971 56 576 7631</p>
-    <p><a href="https://linkedin.com/in/rizwan-ali-ai-engineer">LinkedIn</a> · <a href="https://github.com/rizwannazir333">GitHub</a> · <a href="assets/Rizwan_Ali_CV.pdf">Academic CV (PDF)</a> · <a href="assets/Rizwan_Ali_Europass_CV.pdf">Europass CV (PDF)</a></p>
-    <p>With photo: <a href="assets/Rizwan_Ali_CV_Photo.pdf">Academic CV</a> · <a href="assets/Rizwan_Ali_Europass_CV_Photo.pdf">Europass CV</a></p>
+    <p><a href="https://linkedin.com/in/rizwan-ali-ai-engineer">LinkedIn</a> · <a href="https://github.com/rizwannazir333">GitHub</a> · <a href="#cv">CVs (Academic and Europass)</a></p>
   </section>
 </main>
 
 <footer><div class="wrap">Rizwan Ali · Last updated November 2026</div></footer>
+<script>
+(function(){var d=document.querySelector('.cvmenu');if(!d)return;
+document.addEventListener('click',function(e){if(d.open&&!d.contains(e.target))d.open=false;});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&d.open){d.open=false;d.querySelector('summary').focus();}});
+d.querySelectorAll('.menu a').forEach(function(a){a.addEventListener('click',function(){d.open=false;});});})();
+</script>
 </body>
 </html>
