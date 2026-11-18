@@ -4,7 +4,7 @@
 
 Software Engineering graduate (BS Hons, CGPA 3.66/4.00) and AI Engineer Intern. I build and evaluate machine learning models, with a focus on healthcare data and on understanding why a model makes its predictions. Applying for a Master's in AI, Machine Learning or Data Science for 2027.
 
-Abu Dhabi, UAE · rizwan_nazir@163.com · [LinkedIn](https://linkedin.com/in/rizwan-ali-ai-engineer) · [GitHub](https://github.com/rizwannazir333) · [CV (PDF)](assets/Rizwan_Ali_CV.pdf)
+Abu Dhabi, UAE · rizwan_nazir@163.com · [LinkedIn](https://linkedin.com/in/rizwan-ali-ai-engineer) · [GitHub](https://github.com/rizwannazir333) · [Academic CV (PDF)](assets/Rizwan_Ali_CV.pdf) · [Europass CV (PDF)](assets/Rizwan_Ali_Europass_CV.pdf)
 
 ## Research interests
 
