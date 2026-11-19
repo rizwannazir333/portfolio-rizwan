@@ -21,7 +21,7 @@ Final Year Project, BS Hons Software Engineering · Grade A · Jul 2025 – Jul 
 
 ![HeartCare web app: prediction result](assets/heartcare_result.jpg)
 
-[Watch the 16-second demo (MP4)](assets/heartcare_demo.mp4)
+**[Try the live app](https://rizwannazir333.github.io/portfolio-rizwan/app/)** · [Watch the 16-second demo (MP4)](assets/heartcare_demo.mp4)
 
 - Compared Logistic Regression, Random Forest and a neural network with dropout (TensorFlow/Keras) on 13 clinical features from 597 patient records, averaging their probabilities into Low, Medium and High risk levels.
 - With repeated stratified 5-fold cross-validation, logistic regression and the random forest reached ROC-AUC 0.90 (accuracy 0.82–0.83); recall stayed below precision, the main weakness to address.

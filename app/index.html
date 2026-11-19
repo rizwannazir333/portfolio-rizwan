@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HeartCare Prediction</title>
+<meta name="description" content="Web version of Rizwan Ali's final year project: heart disease risk prediction with logistic regression, a random forest and a neural network, running in your browser.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9D%A4%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{--red:#ff4d4d;--blue:#4facfe;--green:#43e97b;--orange:#f79d00;--muted:#cfd8dc;--panel:rgba(255,255,255,0.08);--card:rgba(255,255,255,0.1);color-scheme:dark}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',system-ui,sans-serif}
+html{background:linear-gradient(135deg,#0f2027,#203a43,#2c5364) fixed #203a43;min-height:100%}
+body{min-height:100vh;color:#fff;background-color:#203a43;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='80'%3E%3Cpolyline points='0,40 60,40 75,15 90,65 105,40 240,40' fill='none' stroke='%23ffffff' stroke-opacity='0.08' stroke-width='3'/%3E%3C/svg%3E"),linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  background-size:240px 80px,cover;background-attachment:fixed;display:flex;flex-direction:column}
+a{color:var(--blue)}
+.navbar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px max(16px,4vw);background:rgba(0,0,0,0.35);backdrop-filter:blur(10px);box-shadow:0 2px 10px rgba(0,0,0,0.3);position:sticky;top:0;z-index:10;flex-wrap:wrap}
+.brand{font-size:20px;font-weight:600;display:flex;align-items:center;gap:8px;color:#fff;text-decoration:none}
+.brand .dot{color:var(--red)}
+.nav-links{display:flex;gap:20px;flex-wrap:wrap}
+.nav-links a{color:#eaeaea;text-decoration:none;font-size:15px;padding-bottom:3px;border-bottom:2px solid transparent;transition:.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--blue);border-bottom-color:var(--blue)}
+.nav-links a.back{color:var(--muted)}
+.notice{max-width:860px;margin:18px auto 0;padding:10px 16px;border-radius:10px;background:rgba(247,157,0,0.15);border:1px solid rgba(247,157,0,0.45);font-size:13px;color:#ffe2b3;width:calc(100% - 32px)}
+main{flex:1;display:flex;justify-content:center;align-items:flex-start;padding:24px 16px 40px}
+.card{background:var(--card);backdrop-filter:blur(12px);padding:28px;border-radius:15px;box-shadow:0 8px 25px rgba(0,0,0,0.3);width:860px;max-width:100%}
+.view{display:none}.view.on{display:block}
+h2{text-align:center;margin-bottom:4px;font-weight:600}
+.hint{text-align:center;color:var(--muted);font-size:13px;margin-bottom:16px}
+.samples{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:16px}
+.chip{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:#fff;border-radius:999px;padding:5px 12px;font-size:12.5px;cursor:pointer}
+.chip:hover{background:rgba(255,255,255,0.22)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px 16px}
+.field.full{grid-column:1/-1}
+.field label{display:block;font-size:12.5px;color:var(--muted);margin-bottom:4px}
+.field input,.field select{width:100%;padding:9px 10px;border:none;border-radius:8px;outline:none;background:rgba(255,255,255,0.15);color:#fff;font-size:14px}
+.field input::placeholder{color:#b9c2c7}
+.field input:focus,.field select:focus{background:rgba(255,255,255,0.28);box-shadow:0 0 0 2px var(--blue)}
+.field select option{color:#111;background:#eaf1f5}
+.btnrow{display:grid;grid-template-columns:2fr 1fr;gap:12px;margin-top:18px}
+.btn{display:inline-block;border:none;border-radius:8px;padding:12px 18px;font-size:15px;font-weight:600;cursor:pointer;color:#fff;background:var(--blue);text-decoration:none;text-align:center;transition:.2s}
+.btn:hover{filter:brightness(1.1)}
+.btn.red{background:var(--red)}.btn.ghost{background:rgba(255,255,255,0.15)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+.panel{background:var(--panel);border-radius:12px;padding:18px}
+.risk-badge{text-align:center;border-radius:10px;padding:16px;margin-bottom:12px}
+.risk-badge .label{font-size:12px;letter-spacing:1.5px;color:#eee}
+.risk-badge .value{font-size:34px;font-weight:600}
+.risk-badge.Low{background:rgba(67,233,123,0.2)}.risk-badge.Low .value{color:var(--green)}
+.risk-badge.Medium{background:rgba(247,157,0,0.2)}.risk-badge.Medium .value{color:var(--orange)}
+.risk-badge.High{background:rgba(255,77,77,0.25)}.risk-badge.High .value{color:#ff8080}
+.prob{text-align:center;color:#ddd}
+.prob b{color:#fff;font-size:18px}
+.kv{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.12);font-size:14px}
+.kv span:first-child{color:var(--muted)}
+.chart-title{color:#ddd;margin-bottom:8px}
+.chart-wrap{position:relative;height:240px}
+.models{font-size:13px;color:var(--muted);margin-top:8px}
+.actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:22px}
+.tbl{overflow-x:auto;margin-top:16px;border-radius:10px}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:560px}
+th{background:rgba(0,0,0,0.35);padding:11px 8px;font-weight:600}
+td{padding:11px 8px;text-align:center;border-bottom:1px solid rgba(255,255,255,0.12)}
+td.name{text-align:left}
+.r-Low{color:var(--green);font-weight:600}.r-Medium{color:var(--orange);font-weight:600}.r-High{color:#ff8080;font-weight:600}
+.del{background:none;border:none;color:#ff8080;cursor:pointer;font-size:16px}
+.empty{text-align:center;color:var(--muted);padding:24px}
+.about p,.about li{color:#e6ecef;font-size:14.5px;line-height:1.7}
+.about ul{margin:6px 0 12px 20px}
+.about h3{margin:16px 0 4px;font-size:16px}
+.footer{text-align:center;padding:14px;font-size:13px;color:var(--muted)}
+.footer a{color:var(--muted)}
+@media (max-width:720px){body{background-attachment:scroll;background-size:240px 80px,100% 100%}.grid{grid-template-columns:1fr 1fr}.cols{grid-template-columns:1fr}.card{padding:20px}}
+@media (max-width:460px){.grid{grid-template-columns:1fr}.btnrow{grid-template-columns:1fr}.nav-links{gap:14px}.nav-links a{font-size:14px}}
+@media print{.navbar,.notice,.actions,.footer{display:none}body{background:#203a43}}
+</style>
+</head>
+<body>
+<nav class="navbar" aria-label="Main">
+  <a class="brand" href="#new"><span class="dot">&#10084;</span> HeartCare Prediction</a>
+  <div class="nav-links">
+    <a href="#new" data-view="new">New Prediction</a>
+    <a href="#history" data-view="history">History</a>
+    <a href="#about" data-view="about">About</a>
+    <a class="back" href="../">Portfolio</a>
+  </div>
+</nav>
+
+<p class="notice"><b>Academic project, not a medical device.</b> Do not use it for real diagnosis or treatment decisions. Everything runs in your browser; no data is sent anywhere.</p>
+
+<main>
+  <!-- New prediction -->
+  <section class="card view" id="view-new" aria-labelledby="new-h">
+    <h2 id="new-h">Enter Patient Data</h2>
+    <p class="hint">Fill all fields, then click Predict. Or load a sample record from the project dataset:</p>
+    <div class="samples">
+      <button type="button" class="chip" data-sample="A">Sample A (67, male)</button>
+      <button type="button" class="chip" data-sample="B">Sample B (41, female)</button>
+      <button type="button" class="chip" data-sample="C">Sample C (63, male)</button>
+    </div>
+    <form id="form" novalidate>
+      <div class="grid">
+        <div class="field full"><label for="name">Patient Name</label><input id="name" name="name" type="text" placeholder="e.g. Sample patient" maxlength="100"></div>
+        <div class="field"><label for="age">Age (years)</label><input id="age" name="age" type="number" min="1" max="120" placeholder="e.g. 54" required></div>
+        <div class="field"><label for="sex">Sex</label><select id="sex" name="sex" required><option value="" disabled selected>Select...</option><option value="1">Male</option><option value="0">Female</option></select></div>
+        <div class="field"><label for="cp">Chest Pain Type</label><select id="cp" name="cp" required><option value="" disabled selected>Select...</option><option value="1">Typical Angina</option><option value="2">Atypical Angina</option><option value="3">Non-Anginal Pain</option><option value="4">Asymptomatic</option></select></div>
+        <div class="field"><label for="trestbps">Resting BP (mm Hg)</label><input id="trestbps" name="trestbps" type="number" min="50" max="260" placeholder="e.g. 130" required></div>
+        <div class="field"><label for="chol">Cholesterol (mg/dl)</label><input id="chol" name="chol" type="number" min="80" max="700" placeholder="e.g. 240" required></div>
+        <div class="field"><label for="fbs">Fasting Sugar &gt; 120</label><select id="fbs" name="fbs" required><option value="" disabled selected>Select...</option><option value="1">True</option><option value="0">False</option></select></div>
+        <div class="field"><label for="restecg">Resting ECG</label><select id="restecg" name="restecg" required><option value="" disabled selected>Select...</option><option value="0">Normal</option><option value="1">ST-T Abnormality</option><option value="2">LV Hypertrophy</option></select></div>
+        <div class="field"><label for="thalach">Max Heart Rate</label><input id="thalach" name="thalach" type="number" min="60" max="230" placeholder="e.g. 150" required></div>
+        <div class="field"><label for="exang">Exercise Angina</label><select id="exang" name="exang" required><option value="" disabled selected>Select...</option><option value="1">Yes</option><option value="0">No</option></select></div>
+        <div class="field"><label for="oldpeak">Oldpeak (ST Depr.)</label><input id="oldpeak" name="oldpeak" type="number" step="0.1" min="0" max="10" placeholder="e.g. 1.4" required></div>
+        <div class="field"><label for="slope">Slope of ST</label><select id="slope" name="slope" required><option value="" disabled selected>Select...</option><option value="1">Upsloping</option><option value="2">Flat</option><option value="3">Downsloping</option></select></div>
+        <div class="field"><label for="ca">Major Vessels (CA)</label><select id="ca" name="ca" required><option value="" disabled selected>Select...</option><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></div>
+        <div class="field"><label for="thal">Thalassemia</label><select id="thal" name="thal" required><option value="" disabled selected>Select...</option><option value="3">Normal</option><option value="6">Fixed Defect</option><option value="7">Reversible Defect</option></select></div>
+      </div>
+      <p class="hint" id="formmsg" role="alert" style="margin:12px 0 0;color:#ffb3b3"></p>
+      <div class="btnrow">
+        <button class="btn red" type="submit" id="predictBtn">Predict</button>
+        <button class="btn ghost" type="reset">Reset</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- Result -->
+  <section class="card view" id="view-result" aria-labelledby="res-h" aria-live="polite">
+    <h2 id="res-h">Prediction Result</h2>
+    <div class="cols">
+      <div class="panel">
+        <div class="risk-badge" id="badge"><div class="label">PREDICTED RISK</div><div class="value" id="riskValue">-</div></div>
+        <div class="prob">Overall Probability: <b id="avgProb">-</b></div>
+        <div style="margin-top:14px">
+          <div class="kv"><span>Patient</span><span id="rName"></span></div>
+          <div class="kv"><span>Age</span><span id="rAge"></span></div>
+          <div class="kv"><span>Sex</span><span id="rSex"></span></div>
+          <div class="kv"><span>Date</span><span id="rDate"></span></div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="chart-title">Model-wise Probability</div>
+        <div class="chart-wrap"><canvas id="chart" role="img" aria-label="Bar chart of each model's predicted probability"></canvas></div>
+        <p class="models" id="modelText"></p>
+      </div>
+    </div>
+    <div class="actions">
+      <a class="btn red" href="#new">+ New Prediction</a>
+      <a class="btn" href="#history">History</a>
+      <button class="btn" type="button" onclick="window.print()">Download Report</button>
+    </div>
+  </section>
+
+  <!-- History -->
+  <section class="card view" id="view-history" aria-labelledby="hist-h">
+    <h2 id="hist-h">Past Predictions</h2>
+    <p class="hint" id="histCount"></p>
+    <div class="tbl"><table>
+      <thead><tr><th>#</th><th>Name</th><th>Age</th><th>Sex</th><th>Risk</th><th>Probability</th><th>Date</th><th>Action</th></tr></thead>
+      <tbody id="histBody"></tbody>
+    </table></div>
+    <p class="hint" style="margin:12px 0 0">Saved only in this browser on this device.</p>
+  </section>
+
+  <!-- About -->
+  <section class="card view about" id="view-about" aria-labelledby="about-h">
+    <h2 id="about-h">About this app</h2>
+    <p class="hint">Final year project (Grade A), BS Hons Software Engineering, Virtual University of Pakistan · Rizwan Ali</p>
+    <p>HeartCare estimates a patient's heart disease risk from 13 clinical measurements. Three models trained on 597 patient records each give a probability; the app averages them and reports a risk level: <b>Low</b> below 30%, <b>Medium</b> from 30% to 70%, and <b>High</b> at 70% or above.</p>
+    <h3>Models</h3>
+    <ul>
+      <li>Logistic Regression and Random Forest (scikit-learn)</li>
+      <li>Neural network (TensorFlow/Keras): Dense 16 → Dropout 0.3 → Dense 8 → Dense 1</li>
+      <li>In repeated stratified 5-fold cross-validation, logistic regression and the random forest reached ROC-AUC 0.90 (accuracy 0.82–0.83). Recall stayed below precision, so some at-risk patients would be missed.</li>
+    </ul>
+    <h3>This web version</h3>
+    <ul>
+      <li>Uses the same trained models as the Flask app, exported from the project's model files. On 598 test inputs it gives exactly the same probabilities and risk levels as the Python app.</li>
+      <li>The original app adds a login and stores history in MySQL. Here, history is saved only in your browser.</li>
+    </ul>
+    <h3>Links</h3>
+    <ul>
+      <li><a href="https://github.com/rizwannazir333/heart-disease-prediction-final-year-project">Source code and README</a> · <a href="https://github.com/rizwannazir333/heart-disease-prediction-final-year-project/blob/main/MODEL_CARD.md">Model card</a></li>
+      <li><a href="../">Rizwan Ali's portfolio</a></li>
+    </ul>
+  </section>
+</main>
+
+<footer class="footer">Heart Disease Prediction System · Final Year Project · <a href="../">Rizwan Ali</a></footer>
+
+<script src="chart.umd.js"></script>
+<script src="predict.js"></script>
+<script>
+(function () {
+  "use strict";
+  var FIELDS = ["age","sex","cp","trestbps","chol","fbs","restecg","thalach","exang","oldpeak","slope","ca","thal"];
+  // Complete records from heart.csv
+  var SAMPLES = {
+    A: {name:"Sample A", age:67, sex:1, cp:4, trestbps:160, chol:286, fbs:0, restecg:2, thalach:108, exang:1, oldpeak:1.5, slope:2, ca:3, thal:3},
+    B: {name:"Sample B", age:41, sex:0, cp:2, trestbps:130, chol:204, fbs:0, restecg:2, thalach:172, exang:0, oldpeak:1.4, slope:1, ca:0, thal:3},
+    C: {name:"Sample C", age:63, sex:1, cp:1, trestbps:145, chol:233, fbs:1, restecg:2, thalach:150, exang:0, oldpeak:2.3, slope:3, ca:0, thal:6}
+  };
+  var KEY = "heartcare-history";
+  var model = null, chart = null, last = null;
+  var form = document.getElementById("form"), msg = document.getElementById("formmsg"), btn = document.getElementById("predictBtn");
+
+  fetch("model.json").then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (m) { model = m; })
+    .catch(function () { msg.textContent = "The models could not be loaded. Please refresh the page."; btn.disabled = true; });
+
+  function load() { try { return JSON.parse(localStorage.getItem(KEY)) || []; } catch (e) { return []; } }
+  function save(rows) { try { localStorage.setItem(KEY, JSON.stringify(rows)); } catch (e) {} }
+  function fmtDate(d) { return d.toLocaleString(undefined, {day:"2-digit", month:"short", year:"numeric", hour:"2-digit", minute:"2-digit"}); }
+  function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
+
+  document.querySelectorAll("[data-sample]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var s = SAMPLES[b.getAttribute("data-sample")];
+      Object.keys(s).forEach(function (k) { form.elements[k].value = s[k]; });
+      msg.textContent = "";
+    });
+  });
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (!model) { msg.textContent = "The models are still loading. Please try again in a moment."; return; }
+    var bad = FIELDS.filter(function (f) { return !form.elements[f].checkValidity() || form.elements[f].value === ""; });
+    if (bad.length) {
+      msg.textContent = "Please fill in all fields with valid values.";
+      form.elements[bad[0]].focus(); return;
+    }
+    msg.textContent = "";
+    var x = FIELDS.map(function (f) { return parseFloat(form.elements[f].value); });
+    var res = HeartCare.predict(model, x);
+    var name = form.elements.name.value.trim() || "Unknown";
+    last = {name:name, age:x[0], sex:x[1] === 1 ? "Male" : "Female", date:new Date().toISOString(), res:res};
+    var rows = load(); rows.unshift(last); save(rows.slice(0, 200));
+    showResult(last); location.hash = "result";
+  });
+
+  function showResult(r) {
+    var badge = document.getElementById("badge");
+    badge.className = "risk-badge " + r.res.risk;
+    document.getElementById("riskValue").textContent = r.res.risk;
+    document.getElementById("avgProb").textContent = r.res.avg_prob + "%";
+    document.getElementById("rName").textContent = r.name;
+    document.getElementById("rAge").textContent = Math.round(r.age) + " yrs";
+    document.getElementById("rSex").textContent = r.sex;
+    document.getElementById("rDate").textContent = fmtDate(new Date(r.date));
+    document.getElementById("modelText").textContent =
+      "Logistic Regression " + r.res.lr_prob + "% · Random Forest " + r.res.rf_prob + "% · Neural network " + r.res.ann_prob + "%";
+    var data = [r.res.lr_prob, r.res.rf_prob, r.res.ann_prob];
+    if (typeof Chart === "undefined") return;
+    if (chart) { chart.data.datasets[0].data = data; chart.update(); return; }
+    chart = new Chart(document.getElementById("chart"), {
+      type: "bar",
+      data: { labels: ["Logistic Reg.", "Random Forest", "ANN"],
+              datasets: [{ data: data, backgroundColor: ["#4facfe", "#43e97b", "#f79d00"], borderRadius: 6, barPercentage: 0.6 }] },
+      options: { responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false }, tooltip: { callbacks: { label: function (c) { return c.parsed.y + "%"; } } } },
+        scales: { y: { beginAtZero: true, max: 100, ticks: { color: "#cfd8dc", callback: function (v) { return v + "%"; } }, grid: { color: "rgba(255,255,255,0.08)" } },
+                  x: { ticks: { color: "#fff" }, grid: { display: false } } } }
+    });
+  }
+
+  function showHistory() {
+    var rows = load(), body = document.getElementById("histBody");
+    document.getElementById("histCount").textContent = "Total records: " + rows.length;
+    if (!rows.length) { body.innerHTML = '<tr><td colspan="8" class="empty">No predictions yet. <a href="#new">Make one</a>.</td></tr>'; return; }
+    body.innerHTML = rows.map(function (r, i) {
+      return "<tr><td>" + (i + 1) + '</td><td class="name">' + esc(r.name) + "</td><td>" + Math.round(r.age) + "</td><td>" + r.sex +
+        '</td><td class="r-' + r.res.risk + '">' + r.res.risk + "</td><td>" + r.res.avg_prob + "%</td><td>" + fmtDate(new Date(r.date)) +
+        '</td><td><button class="del" type="button" data-i="' + i + '" aria-label="Delete record ' + (i + 1) + '">&#128465;</button></td></tr>';
+    }).join("");
+  }
+  document.getElementById("histBody").addEventListener("click", function (e) {
+    var b = e.target.closest(".del"); if (!b) return;
+    var rows = load(); rows.splice(+b.getAttribute("data-i"), 1); save(rows); showHistory();
+  });
+
+  function route() {
+    var v = (location.hash || "#new").slice(1);
+    if (v === "result" && !last) v = "new";
+    if (["new","result","history","about"].indexOf(v) < 0) v = "new";
+    document.querySelectorAll(".view").forEach(function (s) { s.classList.toggle("on", s.id === "view-" + v); });
+    document.querySelectorAll(".nav-links a[data-view]").forEach(function (a) { a.classList.toggle("active", a.getAttribute("data-view") === v); });
+    if (v === "history") showHistory();
+    if (v === "result" && chart) chart.resize();
+    window.scrollTo(0, 0);
+  }
+  window.addEventListener("hashchange", route); route();
+})();
+</script>
+</body>
+</html>
