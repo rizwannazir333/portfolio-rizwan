@@ -18,110 +18,141 @@ if(p!=='auto')r.setAttribute('data-theme',p);})();
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=JetBrains+Mono:wght@400&display=swap">
 <style>
-/* Layout: one reading column (~720px) with a sticky top nav; projects are the centre of gravity. */
 :root{
-  --bg:#fbfbfa; --surface:#ffffff; --fg:#1c232c; --muted:#5a6573; --line:#e1e4e8;
-  --accent:#1f3a5f; --link:#1f5fa8; --chip:#eef2f7;
+  --bg:#f7f8fa; --surface:#ffffff; --fg:#17202b; --muted:#5a6573; --line:#e3e7ed;
+  --accent:#1f3a5f; --accent2:#2f6db5; --link:#1f5fa8; --chip:#eef2f7; --tint:#eaf0f8;
+  --shadow:0 1px 2px rgba(16,24,40,.04),0 10px 28px -14px rgba(16,24,40,.18);
   --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
   --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#11161d; --surface:#171e27; --fg:#e4e8ee; --muted:#9aa6b5; --line:#2a3441;
-  --accent:#9cbbe3; --link:#8fb8ef; --chip:#1f2935; color-scheme:dark}}
+  --bg:#0f141b; --surface:#161d26; --fg:#e6ebf1; --muted:#9aa6b5; --line:#263140;
+  --accent:#a9c4ea; --accent2:#7fb0f0; --link:#8fb8ef; --chip:#1e2834; --tint:#142030;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 12px 30px -16px rgba(0,0,0,.6); color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#11161d; --surface:#171e27; --fg:#e4e8ee; --muted:#9aa6b5; --line:#2a3441;
-  --accent:#9cbbe3; --link:#8fb8ef; --chip:#1f2935; color-scheme:dark}
+  --bg:#0f141b; --surface:#161d26; --fg:#e6ebf1; --muted:#9aa6b5; --line:#263140;
+  --accent:#a9c4ea; --accent2:#7fb0f0; --link:#8fb8ef; --chip:#1e2834; --tint:#142030;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 12px 30px -16px rgba(0,0,0,.6); color-scheme:dark}
 :root[data-theme="light"]{color-scheme:light}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:var(--link);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--link);outline-offset:3px;border-radius:4px}
+.wrap{max-width:820px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left));padding-right:max(20px,env(safe-area-inset-right))}
+
+/* nav */
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:18px;align-items:center;justify-content:space-between;height:58px}
+nav .me{font:700 1.08rem var(--serif);color:var(--fg);text-decoration:none}
+nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0;font-size:.92rem;align-items:center}
+nav ul a{color:var(--muted);text-decoration:none}
+nav ul a:hover{color:var(--fg)}
+@media (max-width:700px){nav ul li.opt{display:none}nav ul{gap:16px}}
 .theme{background:none;border:1px solid var(--line);border-radius:999px;color:var(--muted);cursor:pointer;display:inline-flex;align-items:center;gap:6px;padding:4px 10px;font:500 .82rem var(--sans)}
 .theme:hover{color:var(--fg);border-color:var(--muted)}
 .theme svg{width:15px;height:15px;fill:currentColor}
 .theme .ic{display:none}
 :root[data-theme-pref="auto"] .theme .ic-auto,:root[data-theme-pref="light"] .theme .ic-light,:root[data-theme-pref="dark"] .theme .ic-dark{display:block}
 @media (max-width:640px){.theme .lbl{display:none}.theme{padding:5px 7px}}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 var(--sans)}
-a{color:var(--link);text-underline-offset:3px}
-a:focus-visible,button:focus-visible{outline:2px solid var(--link);outline-offset:3px;border-radius:3px}
-.wrap{max-width:760px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left));padding-right:max(20px,env(safe-area-inset-right))}
-nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-nav .wrap{display:flex;gap:18px;align-items:center;justify-content:space-between;height:54px}
-nav .me{font:700 1.05rem var(--serif);color:var(--fg);text-decoration:none}
-nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0;font-size:.92rem;align-items:center}
-nav ul a{color:var(--muted);text-decoration:none}
-nav ul a:hover{color:var(--fg)}
-@media (max-width:640px){nav ul li.opt{display:none}}
 .cvmenu{position:relative}
 .cvmenu summary{list-style:none;cursor:pointer;color:var(--muted);display:flex;align-items:center;gap:4px}
 .cvmenu summary::-webkit-details-marker{display:none}
 .cvmenu summary:hover,.cvmenu[open] summary{color:var(--fg)}
 .cvmenu summary svg{width:12px;height:12px;fill:currentColor;transition:transform .15s}
 .cvmenu[open] summary svg{transform:rotate(180deg)}
-.cvmenu .menu{position:absolute;right:0;top:calc(100% + 10px);min-width:230px;background:var(--surface);border:1px solid var(--line);border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.12);padding:6px;display:grid}
-.cvmenu .menu a{color:var(--fg);text-decoration:none;padding:8px 10px;border-radius:6px;display:flex;justify-content:space-between;gap:12px}
+.cvmenu .menu{position:absolute;right:0;top:calc(100% + 12px);min-width:220px;background:var(--surface);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);padding:6px;display:grid}
+.cvmenu .menu a{color:var(--fg);text-decoration:none;padding:9px 10px;border-radius:7px;display:flex;justify-content:space-between;gap:12px}
 .cvmenu .menu a:hover,.cvmenu .menu a:focus-visible{background:var(--chip)}
 .cvmenu .menu small{color:var(--muted)}
-.cvmenu .menu hr{border:0;border-top:1px solid var(--line);margin:4px 2px}
-header{padding-block:48px 34px;display:flex;gap:28px;align-items:center}
-.portrait{width:148px;height:148px;border-radius:50%;object-fit:cover;flex:none;border:3px solid var(--surface);box-shadow:0 0 0 1px var(--line)}
-@media (max-width:560px){header{flex-direction:column;align-items:flex-start;gap:18px;padding-top:32px}.portrait{width:112px;height:112px}}
-h1{font:700 clamp(2.2rem,6vw,3rem)/1.1 var(--serif);margin:0 0 10px;color:var(--accent)}
-.lead{font-size:1.15rem;color:var(--fg);max-width:62ch;margin:0 0 6px}
-.meta{color:var(--muted);margin:0 0 22px}
-.actions{display:flex;flex-wrap:wrap;gap:10px}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:6px;border:1px solid var(--accent);font:600 .92rem var(--sans);text-decoration:none;color:var(--accent)}
-.btn.primary{background:var(--accent);color:var(--bg)}
+
+/* hero */
+.hero{background:radial-gradient(1200px 380px at 20% -10%,var(--tint),transparent 70%),linear-gradient(180deg,var(--tint),var(--bg));border-bottom:1px solid var(--line)}
+header{padding-block:56px 40px;display:grid;grid-template-columns:auto 1fr;gap:34px;align-items:start}
+.portrait{width:150px;height:150px;border-radius:50%;object-fit:cover;border:4px solid var(--surface);box-shadow:var(--shadow)}
+.eyebrow{font:600 .78rem var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--accent2);margin:6px 0 8px}
+h1{font:700 clamp(2.3rem,6vw,3.1rem)/1.05 var(--serif);margin:0 0 14px;color:var(--accent);letter-spacing:-.01em}
+.lead{font-size:1.1rem;color:var(--fg);max-width:60ch;margin:0 0 16px}
+.facts{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0 0 22px}
+.facts li{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:.85rem;color:var(--muted)}
+.facts b{color:var(--fg);font-weight:600}
+.actions{display:flex;flex-wrap:wrap;gap:8px}
+.btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:8px;border:1px solid var(--line);background:var(--surface);font:600 .9rem var(--sans);text-decoration:none;color:var(--fg);transition:border-color .15s,transform .15s}
+.btn:hover{border-color:var(--accent2)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--bg)}
+.btn.primary:hover{filter:brightness(1.1)}
 .btn svg{width:16px;height:16px;fill:currentColor}
-section{padding-block:30px;border-top:1px solid var(--line)}
-h2{font:700 1.45rem var(--serif);margin:0 0 16px}
-h3{font:600 1.08rem var(--sans);margin:0}
+@media (max-width:620px){header{grid-template-columns:1fr;gap:18px;padding-top:34px}.portrait{width:108px;height:108px}}
+.highlights{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0 0 44px}
+.hl{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow)}
+.hl b{display:block;font:700 1.55rem/1.15 var(--serif);color:var(--accent);font-variant-numeric:tabular-nums}
+.hl span{font-size:.86rem;color:var(--muted)}
+@media (max-width:620px){.highlights{grid-template-columns:1fr;gap:8px}.hl{display:flex;align-items:baseline;gap:12px;padding:12px 16px}.hl b{font-size:1.3rem;min-width:84px}}
+
+/* sections */
+section{padding-block:44px 8px}
+.sec-h{display:flex;align-items:center;gap:14px;margin:0 0 20px}
+h2{font:700 1.6rem/1.2 var(--serif);margin:0;color:var(--fg)}
+.sec-h:after{content:"";flex:1;height:1px;background:var(--line)}
+h3{font:600 1.08rem/1.35 var(--sans);margin:0}
 .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;align-items:baseline}
-.when{color:var(--muted);font-size:.9rem;font-variant-numeric:tabular-nums;white-space:nowrap}
-.sub{color:var(--muted);margin:2px 0 10px;font-size:.95rem}
+.when{color:var(--muted);font-size:.88rem;font-variant-numeric:tabular-nums;white-space:nowrap}
+.sub{color:var(--muted);margin:2px 0 12px;font-size:.95rem}
 ul.pts{margin:0;padding-left:20px}
-ul.pts li{margin:4px 0}
-.chips{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:12px 0 0}
-.chips li{background:var(--chip);color:var(--fg);font-size:.82rem;padding:3px 10px;border-radius:999px}
-.project{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px;margin-bottom:18px}
-.project .links{display:flex;flex-wrap:wrap;gap:16px;margin-top:14px;font-size:.92rem;font-weight:500}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:14px 0}
-.stat{border:1px solid var(--line);border-radius:8px;padding:10px 12px}
-.stat b{display:block;font:700 1.4rem var(--serif);color:var(--accent);font-variant-numeric:tabular-nums}
-.stat span{font-size:.82rem;color:var(--muted)}
-figure{margin:16px 0 4px}
-figure img{width:100%;height:auto;border:1px solid var(--line);border-radius:8px;background:#fff}
-figcaption{font-size:.85rem;color:var(--muted);margin-top:6px}
-.tbl{overflow-x:auto}
+ul.pts li{margin:6px 0}
+ul.pts li::marker{color:var(--accent2)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:14px 0 0}
+.chips li{background:var(--chip);color:var(--fg);font-size:.8rem;padding:3px 10px;border-radius:999px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--shadow)}
+.project{position:relative;margin-bottom:22px;overflow:hidden}
+.project:before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+.tag{display:inline-block;font:600 .72rem var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--accent2);margin-bottom:6px}
+.project .actions{margin:4px 0 18px}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0 0 18px}
+.stat{background:var(--chip);border-radius:10px;padding:12px 14px}
+.stat b{display:block;font:700 1.35rem var(--serif);color:var(--accent);font-variant-numeric:tabular-nums}
+.stat span{font-size:.8rem;color:var(--muted);line-height:1.35;display:block}
+@media (max-width:560px){.stats{grid-template-columns:1fr 1fr}.stats .stat:last-child{grid-column:1/-1}}
+figure{margin:0 0 18px}
+figure img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+figcaption{font-size:.84rem;color:var(--muted);margin-top:8px}
+.demo video{width:100%;height:auto;border-radius:12px;background:#000;display:block;box-shadow:var(--shadow)}
+details.more{margin-top:16px;border:1px solid var(--line);border-radius:12px;background:var(--bg)}
+details.more summary{cursor:pointer;padding:12px 16px;font-weight:600;font-size:.92rem;color:var(--fg);list-style:none;display:flex;justify-content:space-between;align-items:center}
+details.more summary::-webkit-details-marker{display:none}
+details.more summary:after{content:"+";font-size:1.2rem;color:var(--muted)}
+details.more[open] summary:after{content:"–"}
+details.more .inner{padding:0 16px 16px}
+.tbl{overflow-x:auto;margin-bottom:16px}
 table{border-collapse:collapse;width:100%;font-size:.84rem;font-variant-numeric:tabular-nums}
+caption{caption-side:top;text-align:left;color:var(--muted);font-size:.84rem;padding-bottom:6px}
 th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);white-space:nowrap}
 @media (min-width:700px){td:first-child{white-space:normal}}
 th{color:var(--muted);font-weight:600}
-.series{display:grid;gap:8px;margin:12px 0 0;padding:0;list-style:none}
-.series li{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline}
-.series code{font:.85rem var(--mono);color:var(--muted)}
-.interests{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 24px;padding:0;margin:0;list-style:none}
-.interests li{padding-left:14px;border-left:2px solid var(--accent)}
-.skillgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
-.skill{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px}
-.skill h3{font-size:.98rem}.skill .chips{margin-top:10px}
-.lang{margin:16px 0 0}
-.demo video{width:100%;height:auto;border:1px solid var(--line);border-radius:8px;background:#000;display:block}
-.shots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:10px}
-.shots a{display:block}.shots img{width:100%;height:auto;border:1px solid var(--line);border-radius:6px;display:block}
-.shots figcaption{margin-top:4px}
-@media (max-width:560px){.shots{grid-template-columns:1fr}}
-dl.skills{display:grid;grid-template-columns:max-content 1fr;gap:6px 20px;margin:0}
-dl.skills dt{font-weight:600}
-dl.skills dd{margin:0;color:var(--fg)}
-@media (max-width:520px){.interests{grid-template-columns:1fr}dl.skills{grid-template-columns:1fr}dl.skills dd{margin-bottom:8px}}
-.contact p{margin:4px 0}
-.cvcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
-.cvcard{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px}
-.cvcard h3{margin-bottom:4px}.cvcard p{margin:0 0 12px;color:var(--muted);font-size:.92rem}
-.cvcard .actions{gap:8px}.cvcard .btn{padding:7px 12px;font-size:.86rem}
-footer{padding-block:28px 40px;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
+.series{display:grid;gap:8px;margin:0 0 16px;padding:0;list-style:none}
+.series li{display:flex;flex-wrap:wrap;gap:2px 12px;align-items:baseline;padding:10px 14px;background:var(--chip);border-radius:10px}
+.series a{font-weight:600}
+.series code{font:.8rem var(--mono);color:var(--muted)}
+.edu .row h3,.exp .row h3{font-size:1.06rem}
+.interests{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:0;margin:0;list-style:none}
+.interests li{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;box-shadow:var(--shadow)}
+.interests b{display:block;color:var(--accent);margin-bottom:2px}
+@media (max-width:560px){.interests{grid-template-columns:1fr}}
+.skillgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
+.skill{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;box-shadow:var(--shadow)}
+.skill h3{font-size:.95rem;color:var(--accent)}.skill .chips{margin-top:10px}
+.lang{margin:16px 0 0;color:var(--muted)}
+.lang b{color:var(--fg)}
+.cvcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.cvcard h3{margin-bottom:4px}.cvcard p{margin:0 0 14px;color:var(--muted);font-size:.92rem}
+.contact .card{display:grid;gap:14px}
+.contact p{margin:0}
+footer{margin-top:52px;padding-block:26px 40px;color:var(--muted);font-size:.86rem;border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
+footer a{color:var(--muted)}
+@media (prefers-reduced-motion:no-preference){.card,.hl,.skill,.interests li{transition:transform .2s,box-shadow .2s}.project:hover,.cvcard:hover{transform:translateY(-2px)}}
 </style>
 </head>
 <body>
@@ -129,10 +160,10 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:.85rem;border-top:1p
   <div class="wrap">
     <a class="me" href="#top">Rizwan Ali</a>
     <ul>
-      <li class="opt"><a href="#about">About</a></li>
-      <li class="opt"><a href="#education">Education</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li class="opt"><a href="#education">Education</a></li>
       <li class="opt"><a href="#experience">Experience</a></li>
+      <li class="opt"><a href="#skills">Skills</a></li>
       <li>
         <details class="cvmenu">
           <summary>CV <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg></summary>
@@ -155,60 +186,54 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:.85rem;border-top:1p
   </div>
 </nav>
 
-<main id="top" class="wrap">
-  <header>
-    <img class="portrait" src="assets/Rizwan_Ali_photo.jpg" alt="Portrait of Rizwan Ali" width="148" height="148">
+<div class="hero" id="top">
+  <div class="wrap">
+  <header id="about">
+    <img class="portrait" src="assets/Rizwan_Ali_photo.jpg" alt="Portrait of Rizwan Ali" width="150" height="150">
     <div>
-    <h1>Rizwan Ali</h1>
-    <p class="lead">Software Engineering graduate and AI Engineer Intern. I build and evaluate machine learning models, with a focus on healthcare data and on understanding why a model makes its predictions.</p>
-    <p class="meta">BS Hons Software Engineering, CGPA 3.66 / 4.00 · Abu Dhabi, UAE · Applying for a Master's in AI, Machine Learning or Computer Science (2027)</p>
-    <div class="actions">
-      <a class="btn primary" href="assets/Rizwan_Ali_CV_Photo.pdf" download>
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 2h14v2H5z"/></svg>Academic CV</a>
-      <a class="btn" href="assets/Rizwan_Ali_Europass_CV_Photo.pdf" download>
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 2h14v2H5z"/></svg>Europass CV</a>
-      <a class="btn" href="https://github.com/rizwannazir333">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 00-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0C17 4.7 18 5 18 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0012 .5z"/></svg>GitHub</a>
-      <a class="btn" href="https://linkedin.com/in/rizwan-ali-ai-engineer">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 11-.01 5 2.5 2.5 0 01.01-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V21H9z"/></svg>LinkedIn</a>
-    </div>
+      <p class="eyebrow">AI Engineer Intern · Machine learning for healthcare</p>
+      <h1>Rizwan Ali</h1>
+      <p class="lead">Software Engineering graduate and AI Engineer Intern at TechGeneyes. I build and evaluate machine learning models that are reliable, explainable and useful in the real world, and I am seeking a Master's degree to research trustworthy AI, especially explainable and clinical machine learning.</p>
+      <ul class="facts" aria-label="Key facts">
+        <li><b>BS Hons Software Engineering</b> · CGPA 3.66 / 4.00</li>
+        <li>Abu Dhabi, UAE</li>
+        <li>Master's 2027: AI · Machine Learning · Computer Science</li>
+      </ul>
+      <div class="actions">
+        <a class="btn primary" href="assets/Rizwan_Ali_CV_Photo.pdf" download><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 2h14v2H5z"/></svg>Academic CV</a>
+        <a class="btn" href="assets/Rizwan_Ali_Europass_CV_Photo.pdf" download><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 2h14v2H5z"/></svg>Europass CV</a>
+        <a class="btn" href="https://github.com/rizwannazir333"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 00-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0C17 4.7 18 5 18 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0012 .5z"/></svg>GitHub</a>
+        <a class="btn" href="https://linkedin.com/in/rizwan-ali-ai-engineer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 11-.01 5 2.5 2.5 0 01.01-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V21H9z"/></svg>LinkedIn</a>
+      </div>
     </div>
   </header>
+  <div class="highlights" aria-label="Highlights">
+    <div class="hl"><b>0.90</b><span>ROC-AUC in my heart disease risk model</span></div>
+    <div class="hl"><b>Grade A</b><span>Final year project, BS Hons Software Engineering</span></div>
+    <div class="hl"><b>3 ways</b><span>Local LLM app built with Ollama, LangChain and LangGraph</span></div>
+  </div>
+  </div>
+</div>
 
-  <section id="about" aria-labelledby="about-h">
-    <h2 id="about-h">About me</h2>
-    <p>I am a Software Engineering graduate (BS Hons, Virtual University of Pakistan, CGPA 3.66/4.00) and an AI Engineer Intern at TechGeneyes, interested in building machine learning models that are reliable, explainable and useful in the real world.</p>
-    <p>My final year project (Grade A) predicted heart disease risk from 597 patient records. I compared logistic regression, a random forest and a neural network with repeated stratified cross-validation, reaching ROC-AUC 0.90; handled missing data without leakage; measured feature importance; and documented limitations in a model card. Recall stayed below precision, which taught me that honest evaluation matters as much as accuracy.</p>
-    <p>In my internship I develop and evaluate machine learning and deep learning models, and I also build local LLM applications with LangChain and LangGraph.</p>
-    <p style="margin-bottom:0">I am seeking a Master's degree in Computer Science, Artificial Intelligence or Machine Learning to research trustworthy AI, especially explainable and clinical machine learning.</p>
-  </section>
-
-  <section id="education" aria-labelledby="education-h">
-    <h2 id="education-h">Education</h2>
-    <div class="row"><h3>BS Hons Software Engineering, Virtual University of Pakistan</h3><span class="when">2023 – 2026</span></div>
-    <p class="sub">CGPA 3.66 / 4.00 · Final year project: Grade A · Completed August 2026</p>
-    <p style="margin:0">Relevant courses: Artificial Intelligence, Machine Learning, Data Structures and Algorithms, Database Systems, Software Engineering.</p>
-  </section>
-
-  <section id="research" aria-labelledby="interests">
-    <h2 id="interests">Research interests</h2>
-    <ul class="interests">
-      <li><b>Clinical ML.</b> Reliable, well-calibrated risk prediction that holds up across patient groups and hospitals.</li>
-      <li><b>Explainable AI.</b> Faithful and stable explanations for individual patient predictions.</li>
-      <li><b>Data quality.</b> Learning from missing, imbalanced and small medical datasets.</li>
-      <li><b>Clinical NLP.</b> Language models for extracting information from clinical notes and reports.</li>
-    </ul>
-  </section>
-
+<main class="wrap">
   <section id="projects" aria-labelledby="projects-h">
-    <h2 id="projects-h">Projects</h2>
+    <div class="sec-h"><h2 id="projects-h">Projects</h2></div>
 
-    <article class="project">
+    <article class="card project">
+      <span class="tag">Research project</span>
       <div class="row"><h3>Heart Disease Risk Prediction Using Machine Learning and Deep Learning</h3><span class="when">Jul 2025 – Jul 2026</span></div>
       <p class="sub">Final Year Project, BS Hons Software Engineering · Grade A</p>
       <p>I compared Logistic Regression, Random Forest and a neural network (TensorFlow/Keras, with dropout) on 13 clinical features from 597 patient records. The three probabilities are averaged into a Low, Medium or High risk level and shown in a Flask web application.</p>
-      <p style="margin:0 0 14px"><a class="btn primary" href="app/">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Try the live app</a></p>
+      <div class="actions">
+        <a class="btn primary" href="app/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Try the live app</a>
+        <a class="btn" href="https://github.com/rizwannazir333/heart-disease-prediction-final-year-project"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.6 16.6L4 12l4.6-4.6L7.2 6 1.2 12l6 6zm6.8 0L20 12l-4.6-4.6L16.8 6l6 6-6 6z"/></svg>Code and README</a>
+        <a class="btn" href="https://github.com/rizwannazir333/heart-disease-prediction-final-year-project/blob/main/MODEL_CARD.md">Model card</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>0.90</b><span>ROC-AUC, logistic regression and random forest</span></div>
+        <div class="stat"><b>0.82–0.83</b><span>Accuracy, cross-validated</span></div>
+        <div class="stat"><b>597</b><span>Patient records, 13 features</span></div>
+      </div>
       <figure class="demo">
         <video controls muted playsinline preload="none" poster="assets/heartcare_demo_poster.jpg" width="1280" height="760">
           <source src="assets/heartcare_demo.mp4" type="video/mp4">
@@ -216,55 +241,53 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:.85rem;border-top:1p
         </video>
         <figcaption>Demo (16 s): log in, enter a patient record, get a risk level with each model's probability, and view the saved history. The patients are sample records from the project dataset.</figcaption>
       </figure>
-      <div class="stats">
-        <div class="stat"><b>0.90</b><span>ROC-AUC, logistic regression and random forest</span></div>
-        <div class="stat"><b>0.82–0.83</b><span>Accuracy, cross-validated</span></div>
-        <div class="stat"><b>597</b><span>Patient records, 13 features</span></div>
-      </div>
       <ul class="pts">
         <li>Evaluated with repeated stratified 5-fold cross-validation and reported recall, F1-score and confusion matrices, because a missed disease case is the costliest error.</li>
         <li>Half of the records had missing values. I compared dropping those rows with median imputation done inside each fold, so no information leaked from validation data. Imputation kept all records, gave similar scores and roughly halved the variation between folds.</li>
         <li>Measured permutation feature importance on held-out folds. A linear model and a tree model independently ranked major vessels, chest pain type and thalassemia among the strongest predictors.</li>
         <li>Wrote a model card covering intended use and limitations, plus data tests and continuous integration on GitHub Actions.</li>
       </ul>
-      <div class="tbl">
-        <table>
-          <caption class="sub" style="caption-side:top;text-align:left">Repeated stratified 5-fold cross-validation (15 folds), mean ± standard deviation</caption>
-          <thead><tr><th>Missing data</th><th>Model</th><th>Accuracy</th><th>Recall</th><th>ROC-AUC</th></tr></thead>
-          <tbody>
-            <tr><td>Drop rows (n=298)</td><td>Logistic Regression</td><td>0.833 ± 0.040</td><td>0.790 ± 0.093</td><td>0.902 ± 0.046</td></tr>
-            <tr><td>Drop rows (n=298)</td><td>Random Forest</td><td>0.822 ± 0.057</td><td>0.763 ± 0.085</td><td>0.903 ± 0.037</td></tr>
-            <tr><td>Median imputation (n=597)</td><td>Logistic Regression</td><td>0.839 ± 0.031</td><td>0.771 ± 0.048</td><td>0.897 ± 0.023</td></tr>
-            <tr><td>Median imputation (n=597)</td><td>Random Forest</td><td>0.829 ± 0.019</td><td>0.747 ± 0.045</td><td>0.895 ± 0.021</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <figure>
-        <img src="assets/feature_importance.png" alt="Bar charts of permutation feature importance for Random Forest and Logistic Regression. Major vessels is the most important feature for both models, followed by chest pain type, thalassemia and sex." loading="lazy" width="1640" height="820">
-        <figcaption>Drop in ROC-AUC when each feature is shuffled, measured on held-out folds.</figcaption>
-      </figure>
+      <details class="more">
+        <summary>Detailed results: cross-validation table and feature importance</summary>
+        <div class="inner">
+          <div class="tbl">
+            <table>
+              <caption>Repeated stratified 5-fold cross-validation (15 folds), mean ± standard deviation</caption>
+              <thead><tr><th>Missing data</th><th>Model</th><th>Accuracy</th><th>Recall</th><th>ROC-AUC</th></tr></thead>
+              <tbody>
+                <tr><td>Drop rows (n=298)</td><td>Logistic Regression</td><td>0.833 ± 0.040</td><td>0.790 ± 0.093</td><td>0.902 ± 0.046</td></tr>
+                <tr><td>Drop rows (n=298)</td><td>Random Forest</td><td>0.822 ± 0.057</td><td>0.763 ± 0.085</td><td>0.903 ± 0.037</td></tr>
+                <tr><td>Median imputation (n=597)</td><td>Logistic Regression</td><td>0.839 ± 0.031</td><td>0.771 ± 0.048</td><td>0.897 ± 0.023</td></tr>
+                <tr><td>Median imputation (n=597)</td><td>Random Forest</td><td>0.829 ± 0.019</td><td>0.747 ± 0.045</td><td>0.895 ± 0.021</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <figure style="margin:0">
+            <img src="assets/feature_importance.png" alt="Bar charts of permutation feature importance for Random Forest and Logistic Regression. Major vessels is the most important feature for both models, followed by chest pain type, thalassemia and sex." loading="lazy" width="1640" height="820">
+            <figcaption>Drop in ROC-AUC when each feature is shuffled, measured on held-out folds.</figcaption>
+          </figure>
+        </div>
+      </details>
       <ul class="chips" aria-label="Tools used">
         <li>Python</li><li>scikit-learn</li><li>TensorFlow / Keras</li><li>Pandas</li><li>Flask</li><li>MySQL</li><li>GitHub Actions</li>
       </ul>
-      <div class="links">
-        <a href="app/"><b>Try the live app</b></a>
-        <a href="https://github.com/rizwannazir333/heart-disease-prediction-final-year-project">Code and README</a>
-        <a href="https://github.com/rizwannazir333/heart-disease-prediction-final-year-project/blob/main/MODEL_CARD.md">Model card</a>
-      </div>
     </article>
 
-    <article class="project">
+    <article class="card project">
+      <span class="tag">Software project</span>
       <div class="row"><h3>Local LLM Writing Assistant, built three ways</h3><span class="when">Nov 2026</span></div>
       <p class="sub">Personal project</p>
       <p>An offline assistant that drafts emails and corrects English grammar, running on a 4-bit quantized 4B model through Ollama, so no text leaves the computer. I built the same application three times to compare what each framework adds.</p>
-      <p style="margin:0 0 14px"><a class="btn primary" href="llm-demo/">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>See recorded runs</a></p>
+      <div class="actions">
+        <a class="btn primary" href="llm-demo/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>See recorded runs</a>
+        <a class="btn" href="https://github.com/rizwannazir333/langgraph-writing-assistant#workflow-graph">Workflow graph</a>
+      </div>
       <ul class="series">
         <li><a href="https://github.com/rizwannazir333/ollama-writing-assistant">Part 1: Plain Ollama</a><code>about 140 lines, few-shot prompting</code></li>
         <li><a href="https://github.com/rizwannazir333/langchain-writing-assistant">Part 2: LangChain</a><code>chains, structured output, memory, tool-using agent</code></li>
         <li><a href="https://github.com/rizwannazir333/langgraph-writing-assistant">Part 3: LangGraph</a><code>self-review loop, human approval, parallel correction</code></li>
       </ul>
-      <ul class="pts" style="margin-top:12px">
+      <ul class="pts">
         <li>The LangGraph version drafts an email, reviews and fixes its own output, looks up real dates with tools, and waits for human approval before finishing.</li>
         <li>Added a guardrail that removes promises the model invents in emails.</li>
         <li>Prepared lesson slides that teach LangChain and LangGraph step by step, with this project as the example.</li>
@@ -272,25 +295,42 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:.85rem;border-top:1p
       <ul class="chips" aria-label="Tools used">
         <li>Python</li><li>Ollama</li><li>LangChain</li><li>LangGraph</li><li>Pydantic</li><li>GitHub Actions</li>
       </ul>
-      <div class="links">
-        <a href="llm-demo/"><b>See recorded runs</b></a>
-        <a href="https://github.com/rizwannazir333/langgraph-writing-assistant#workflow-graph">Workflow graph</a>
-      </div>
     </article>
   </section>
 
-  <section id="experience" aria-labelledby="experience-h">
-    <h2 id="experience-h">Experience</h2>
-    <div class="row"><h3>AI Engineer Intern, TechGeneyes</h3><span class="when">Aug 2026 – Present · Remote</span></div>
-    <ul class="pts" style="margin-top:8px">
-      <li>Develop and evaluate machine learning and deep learning models with scikit-learn and TensorFlow/Keras.</li>
-      <li>Prepare and explore data, engineer features and tune hyperparameters.</li>
-      <li>Report model performance with precision, recall, F1-score and confusion matrices.</li>
+  <section id="education" class="edu" aria-labelledby="education-h">
+    <div class="sec-h"><h2 id="education-h">Education</h2></div>
+    <div class="card">
+      <div class="row"><h3>BS Hons Software Engineering, Virtual University of Pakistan</h3><span class="when">2023 – 2026</span></div>
+      <p class="sub">CGPA 3.66 / 4.00 · Final year project: Grade A · Completed August 2026</p>
+      <p style="margin:0">Relevant courses: Artificial Intelligence, Machine Learning, Data Structures and Algorithms, Database Systems, Software Engineering.</p>
+    </div>
+  </section>
+
+  <section id="research" aria-labelledby="interests">
+    <div class="sec-h"><h2 id="interests">Research interests</h2></div>
+    <ul class="interests">
+      <li><b>Clinical ML</b>Reliable, well-calibrated risk prediction that holds up across patient groups and hospitals.</li>
+      <li><b>Explainable AI</b>Faithful and stable explanations for individual patient predictions.</li>
+      <li><b>Data quality</b>Learning from missing, imbalanced and small medical datasets.</li>
+      <li><b>Clinical NLP</b>Language models for extracting information from clinical notes and reports.</li>
     </ul>
   </section>
 
-  <section aria-labelledby="skills-h">
-    <h2 id="skills-h">Skills and languages</h2>
+  <section id="experience" class="exp" aria-labelledby="experience-h">
+    <div class="sec-h"><h2 id="experience-h">Experience</h2></div>
+    <div class="card">
+      <div class="row"><h3>AI Engineer Intern, TechGeneyes</h3><span class="when">Aug 2026 – Present · Remote</span></div>
+      <ul class="pts" style="margin-top:10px">
+        <li>Develop and evaluate machine learning and deep learning models with scikit-learn and TensorFlow/Keras.</li>
+        <li>Prepare and explore data, engineer features and tune hyperparameters.</li>
+        <li>Report model performance with precision, recall, F1-score and confusion matrices.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="skills" aria-labelledby="skills-h">
+    <div class="sec-h"><h2 id="skills-h">Skills and languages</h2></div>
     <div class="skillgrid">
       <div class="skill"><h3>Machine learning</h3><ul class="chips"><li>Logistic regression</li><li>Random forests</li><li>Feature engineering</li><li>Hyperparameter tuning</li><li>Cross-validation</li><li>Missing-data imputation</li></ul></div>
       <div class="skill"><h3>Deep learning</h3><ul class="chips"><li>Neural networks</li><li>Dropout regularisation</li><li>TensorFlow</li><li>Keras</li></ul></div>
@@ -303,7 +343,7 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:.85rem;border-top:1p
   </section>
 
   <section id="next" aria-labelledby="next-h">
-    <h2 id="next-h">Future research directions</h2>
+    <div class="sec-h"><h2 id="next-h">Future research directions</h2></div>
     <p>My final year project left me with more questions than answers. These are the ones I would like to take into a Master's thesis:</p>
     <ul class="pts">
       <li><b>Explanations for single patients.</b> Permutation importance tells me what matters on average. A doctor needs to know why the model flagged this particular patient, so I want to compare per-patient methods such as SHAP and check whether their explanations stay stable.</li>
@@ -313,35 +353,36 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:.85rem;border-top:1p
   </section>
 
   <section id="cv" aria-labelledby="cv-h">
-    <h2 id="cv-h">CV</h2>
+    <div class="sec-h"><h2 id="cv-h">CV</h2></div>
     <div class="cvcards">
-      <div class="cvcard">
+      <div class="card cvcard">
         <h3>Academic CV</h3>
         <p>One page, research-focused, for Master's applications.</p>
-        <div class="actions">
-          <a class="btn primary" href="assets/Rizwan_Ali_CV_Photo.pdf" download>Download PDF</a>
-        </div>
+        <a class="btn primary" href="assets/Rizwan_Ali_CV_Photo.pdf" download><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 2h14v2H5z"/></svg>Download PDF</a>
       </div>
-      <div class="cvcard">
+      <div class="card cvcard">
         <h3>Europass CV</h3>
         <p>Standard European format, for EU universities and employers.</p>
-        <div class="actions">
-          <a class="btn primary" href="assets/Rizwan_Ali_Europass_CV_Photo.pdf" download>Download PDF</a>
-        </div>
+        <a class="btn primary" href="assets/Rizwan_Ali_Europass_CV_Photo.pdf" download><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 2h14v2H5z"/></svg>Download PDF</a>
       </div>
     </div>
   </section>
 
   <section id="contact" class="contact" aria-labelledby="contact-h">
-    <h2 id="contact-h">Contact</h2>
-    <p>I am applying for Master's programmes in Artificial Intelligence, Machine Learning and Computer Science for 2027 and would be glad to hear about thesis or research assistant opportunities.</p>
-    <p>Email: <a href="mailto:rizwan_nazir@163.com">rizwan_nazir@163.com</a></p>
-    <p>Phone / WhatsApp: +971 56 576 7631</p>
-    <p><a href="https://linkedin.com/in/rizwan-ali-ai-engineer">LinkedIn</a> · <a href="https://github.com/rizwannazir333">GitHub</a> · <a href="#cv">CVs (Academic and Europass)</a></p>
+    <div class="sec-h"><h2 id="contact-h">Contact</h2></div>
+    <div class="card">
+      <p>I am applying for Master's programmes in Artificial Intelligence, Machine Learning and Computer Science for 2027 and would be glad to hear about thesis or research assistant opportunities.</p>
+      <div class="actions">
+        <a class="btn primary" href="mailto:rizwan_nazir@163.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5z"/></svg>rizwan_nazir@163.com</a>
+        <a class="btn" href="https://linkedin.com/in/rizwan-ali-ai-engineer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 11-.01 5 2.5 2.5 0 01.01-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V21H9z"/></svg>LinkedIn</a>
+        <a class="btn" href="https://github.com/rizwannazir333"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 00-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0C17 4.7 18 5 18 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0012 .5z"/></svg>GitHub</a>
+      </div>
+      <p style="color:var(--muted);font-size:.92rem">Phone / WhatsApp: +971 56 576 7631</p>
+    </div>
   </section>
 </main>
 
-<footer><div class="wrap">Rizwan Ali · Last updated November 2026</div></footer>
+<footer><div class="wrap"><span>Rizwan Ali · Last updated November 2026</span><span><a href="#top">Back to top</a></span></div></footer>
 <script>
 (function(){var r=document.documentElement,b=document.querySelector('.theme');if(!b)return;
 var order=['auto','light','dark'],names={auto:'Auto',light:'Day',dark:'Night'};
