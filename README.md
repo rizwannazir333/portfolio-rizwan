@@ -8,10 +8,12 @@ Abu Dhabi, UAE · rizwan_nazir@163.com · [LinkedIn](https://linkedin.com/in/riz
 
 ## Research interests
 
-- **Clinical ML:** reliable, well-calibrated risk prediction that holds up across patient groups and hospitals
-- **Explainable AI:** faithful and stable explanations for individual patient predictions
-- **Data quality:** learning from missing, imbalanced and small medical datasets
-- **Clinical NLP:** language models for extracting information from clinical notes and reports
+- **Trustworthy and explainable AI:** faithful, stable explanations and well-calibrated predictions that people can rely on
+- **Machine learning for healthcare:** risk prediction that holds up across patient groups and hospitals
+- **NLP and large language models:** LLM agents, tool use and evaluation; extracting information from text, including clinical notes
+- **Computer vision:** image classification and analysis, including medical imaging
+- **Data-centric AI:** learning from missing, imbalanced, small or noisy data, and building high-quality annotated datasets
+- **Robust evaluation and generalisation:** testing whether models still work beyond their training data, across groups and settings
 
 ## Projects
 
