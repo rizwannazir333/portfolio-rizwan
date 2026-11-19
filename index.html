@@ -67,6 +67,12 @@ nav ul a:hover{color:var(--fg)}
 .cvmenu .menu a{color:var(--fg);text-decoration:none;padding:9px 10px;border-radius:7px;display:flex;justify-content:space-between;gap:12px}
 .cvmenu .menu a:hover,.cvmenu .menu a:focus-visible{background:var(--chip)}
 .cvmenu .menu small{color:var(--muted)}
+.phone{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;color:var(--muted);font-size:.92rem}
+.phonemenu summary{color:var(--link);font-weight:600;border:1px solid var(--line);border-radius:8px;padding:5px 10px;background:var(--surface)}
+.phonemenu summary:hover,.phonemenu[open] summary{color:var(--link);border-color:var(--accent2)}
+.phonemenu .menu{left:0;right:auto;top:calc(100% + 8px);min-width:200px;z-index:4}
+.phonemenu .mi{display:inline-flex;align-items:center;gap:8px;font-weight:600}
+.phonemenu .mi svg{width:16px;height:16px;fill:var(--accent2)}
 
 /* hero */
 .hero{background:radial-gradient(1200px 380px at 20% -10%,var(--tint),transparent 70%),linear-gradient(180deg,var(--tint),var(--bg));border-bottom:1px solid var(--line)}
@@ -191,7 +197,7 @@ footer a{color:var(--muted)}
   <header id="about">
     <img class="portrait" src="assets/Rizwan_Ali_photo.jpg" alt="Portrait of Rizwan Ali" width="150" height="150">
     <div>
-      <p class="eyebrow">AI Engineer Intern · Machine learning for healthcare</p>
+      <p class="eyebrow">AI Engineer Intern · Machine Learning · Deep Learning · LLMs</p>
       <h1>Rizwan Ali</h1>
       <p class="lead">Software Engineering graduate and AI Engineer Intern at TechGeneyes. I build and evaluate machine learning models that are reliable, explainable and useful in the real world, and I am seeking a Master's degree to research trustworthy AI, especially explainable and clinical machine learning.</p>
       <ul class="facts" aria-label="Key facts">
@@ -377,7 +383,16 @@ footer a{color:var(--muted)}
         <a class="btn" href="https://linkedin.com/in/rizwan-ali-ai-engineer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 11-.01 5 2.5 2.5 0 01.01-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V21H9z"/></svg>LinkedIn</a>
         <a class="btn" href="https://github.com/rizwannazir333"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 00-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0C17 4.7 18 5 18 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0012 .5z"/></svg>GitHub</a>
       </div>
-      <p style="color:var(--muted);font-size:.92rem">Phone / WhatsApp: +971 56 576 7631</p>
+      <div class="phone">
+        <span>Phone / WhatsApp:</span>
+        <details class="cvmenu phonemenu">
+          <summary aria-label="Phone +971 56 576 7631: choose call or WhatsApp">+971 56 576 7631 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg></summary>
+          <div class="menu">
+            <a href="tel:+971565767631"><span class="mi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.6a1 1 0 01-.25 1z"/></svg>Call</span><small>Phone</small></a>
+            <a href="https://wa.me/971565767631" target="_blank" rel="noopener"><span class="mi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 01-3.4-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.7 11.9 11.9 0 004.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 001.8-1.3 2.3 2.3 0 00.2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>WhatsApp</span><small>Chat</small></a>
+          </div>
+        </details>
+      </div>
     </div>
   </section>
 </main>
@@ -392,10 +407,10 @@ b.setAttribute('aria-label','Theme: '+names[p]+'. Click for '+names[n]);b.title=
 apply(r.getAttribute('data-theme-pref')||'auto');
 b.addEventListener('click',function(){var p=order[(order.indexOf(r.getAttribute('data-theme-pref')||'auto')+1)%3];
 apply(p);try{localStorage.setItem('theme',p);}catch(e){}});})();
-(function(){var d=document.querySelector('.cvmenu');if(!d)return;
+document.querySelectorAll('.cvmenu').forEach(function(d){
 document.addEventListener('click',function(e){if(d.open&&!d.contains(e.target))d.open=false;});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&d.open){d.open=false;d.querySelector('summary').focus();}});
-d.querySelectorAll('.menu a').forEach(function(a){a.addEventListener('click',function(){d.open=false;});});})();
+d.querySelectorAll('.menu a').forEach(function(a){a.addEventListener('click',function(){d.open=false;});});});
 </script>
 </body>
 </html>
