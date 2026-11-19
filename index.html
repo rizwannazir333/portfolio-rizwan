@@ -77,10 +77,18 @@ nav ul a:hover{color:var(--fg)}
 /* hero */
 .hero{background:radial-gradient(1200px 380px at 20% -10%,var(--tint),transparent 70%),linear-gradient(180deg,var(--tint),var(--bg));border-bottom:1px solid var(--line)}
 header{padding-block:56px 40px;display:grid;grid-template-columns:auto 1fr;gap:34px;align-items:start}
-.portrait{width:150px;height:150px;border-radius:50%;object-fit:cover;border:4px solid var(--surface);box-shadow:var(--shadow)}
-.eyebrow{font:600 .78rem/1.6 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--accent2);margin:6px 0 8px}
-.eyebrow span{white-space:nowrap}
-h1{font:700 clamp(2.3rem,6vw,3.1rem)/1.05 var(--serif);margin:0 0 14px;color:var(--accent);letter-spacing:-.01em}
+.portrait{width:156px;height:156px;border-radius:50%;object-fit:cover;padding:4px;background:linear-gradient(135deg,var(--accent2),var(--accent));box-shadow:0 0 0 5px var(--surface),var(--shadow)}
+.badge{display:inline-flex;align-items:center;gap:9px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:5px 14px 5px 11px;font:500 .82rem var(--sans);color:var(--muted);margin:2px 0 14px;box-shadow:var(--shadow)}
+.badge i{width:8px;height:8px;border-radius:50%;background:#1f9d63;box-shadow:0 0 0 3px rgba(31,157,99,.18);flex:none}
+@media (prefers-reduced-motion:no-preference){.badge i{animation:pulse 2.4s ease-in-out infinite}@keyframes pulse{50%{box-shadow:0 0 0 6px rgba(31,157,99,.06)}}}
+h1{font:700 clamp(2.4rem,6.5vw,3.3rem)/1.02 var(--serif);margin:0 0 6px;color:var(--accent);letter-spacing:-.015em}
+.role{font:600 clamp(1.15rem,3vw,1.4rem)/1.3 var(--sans);margin:0 0 14px;color:var(--accent2);background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.tags{display:flex;flex-wrap:wrap;gap:7px;list-style:none;padding:0;margin:0 0 18px}
+.tags li{font:600 .8rem var(--sans);color:var(--accent2);background:color-mix(in srgb,var(--accent2) 9%,var(--surface));border:1px solid color-mix(in srgb,var(--accent2) 28%,transparent);padding:4px 11px;border-radius:999px;white-space:nowrap}
+.meta2{display:flex;flex-wrap:wrap;gap:6px 22px;list-style:none;padding:0;margin:0 0 22px;color:var(--muted);font-size:.92rem}
+.meta2 li{display:inline-flex;align-items:center;gap:7px}
+.meta2 svg{width:17px;height:17px;fill:var(--accent2);flex:none}
+.meta2 b{color:var(--fg);font-weight:600}
 .lead{font-size:1.1rem;color:var(--fg);max-width:60ch;margin:0 0 16px}
 .facts{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0 0 22px}
 .facts li{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:.85rem;color:var(--muted)}
@@ -198,13 +206,16 @@ footer a{color:var(--muted)}
   <header id="about">
     <img class="portrait" src="assets/Rizwan_Ali_photo.jpg" alt="Portrait of Rizwan Ali" width="150" height="150">
     <div>
-      <p class="eyebrow"><span>AI Engineer</span> · <span>Machine Learning</span> · <span>Deep Learning</span> · <span>NLP</span> · <span>LLMs &amp; AI Agents</span> · <span>Chatbots</span> · <span>Automation</span> · <span>Explainable AI</span> · <span>Python</span></p>
+      <p class="badge"><i aria-hidden="true"></i>Applying for a Master's in AI · ML · CS (2027)</p>
       <h1>Rizwan Ali</h1>
+      <p class="role">AI Engineer</p>
+      <ul class="tags" aria-label="Focus areas">
+        <li>Machine Learning</li><li>Deep Learning</li><li>NLP</li><li>LLMs &amp; AI Agents</li><li>Chatbots</li><li>Explainable AI</li><li>Python</li>
+      </ul>
       <p class="lead">Software Engineering graduate and AI Engineer Intern at TechGeneyes. I build and evaluate machine learning models that are reliable, explainable and useful in the real world, and I am seeking a Master's degree to research trustworthy AI across machine learning, NLP and computer vision.</p>
-      <ul class="facts" aria-label="Key facts">
-        <li><b>BS Hons Software Engineering</b> · CGPA 3.66 / 4.00</li>
-        <li>Abu Dhabi, UAE</li>
-        <li>Master's 2027: AI · Machine Learning · Computer Science</li>
+      <ul class="meta2" aria-label="Key facts">
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3L1 9l11 6 9-4.9V17h2V9L12 3zM5 13.2v4L12 21l7-3.8v-4L12 17l-7-3.8z"/></svg><span><b>BS Hons Software Engineering</b> · <span style="white-space:nowrap">CGPA 3.66 / 4.00</span></span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></svg><span>Abu Dhabi, UAE</span></li>
       </ul>
       <div class="actions">
         <a class="btn primary" href="assets/Rizwan_Ali_CV_Photo.pdf" download><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 2h14v2H5z"/></svg>Academic CV</a>

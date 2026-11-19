@@ -1,6 +1,6 @@
 # Rizwan Ali
 
-**AI Engineer · Machine Learning · Deep Learning · NLP · LLMs & AI Agents · Chatbots · Automation · Explainable AI · Python**
+**AI Engineer · Machine Learning · Deep Learning · NLP · LLMs & AI Agents · Chatbots · Explainable AI · Python**
 
 **Portfolio website: https://rizwannazir333.github.io/portfolio-rizwan/**
 
