@@ -32,7 +32,7 @@ Final Year Project, BS Hons Software Engineering · Grade A · Jul 2025 – Jul 
 
 Personal project · Nov 2026
 
-An offline email-drafting and grammar-correction assistant on a 4-bit quantized 4B model, built three times to compare frameworks:
+An offline email-drafting and grammar-correction assistant on a 4-bit quantized 4B model, built three times to compare frameworks ([see recorded runs](https://rizwannazir333.github.io/portfolio-rizwan/llm-demo/)):
 [Part 1: Plain Ollama](https://github.com/rizwannazir333/ollama-writing-assistant) ·
 [Part 2: LangChain](https://github.com/rizwannazir333/langchain-writing-assistant) ·
 [Part 3: LangGraph](https://github.com/rizwannazir333/langgraph-writing-assistant)

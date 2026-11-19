@@ -216,11 +216,6 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:.85rem;border-top:1p
         </video>
         <figcaption>Demo (16 s): log in, enter a patient record, get a risk level with each model's probability, and view the saved history. The patients are sample records from the project dataset.</figcaption>
       </figure>
-      <div class="shots">
-        <figure><a href="assets/heartcare_form.jpg"><img src="assets/heartcare_form.jpg" alt="HeartCare web app form for entering 13 clinical measurements" loading="lazy" width="1400" height="875"></a><figcaption>Patient data form</figcaption></figure>
-        <figure><a href="assets/heartcare_result.jpg"><img src="assets/heartcare_result.jpg" alt="Prediction result showing High risk, 99.36% overall probability, and a bar chart of the three models' probabilities" loading="lazy" width="1400" height="875"></a><figcaption>Result with each model's probability</figcaption></figure>
-        <figure><a href="assets/heartcare_history.jpg"><img src="assets/heartcare_history.jpg" alt="Table of past predictions stored in MySQL with name, age, sex, risk, probability and date" loading="lazy" width="1400" height="547"></a><figcaption>Prediction history in MySQL</figcaption></figure>
-      </div>
       <div class="stats">
         <div class="stat"><b>0.90</b><span>ROC-AUC, logistic regression and random forest</span></div>
         <div class="stat"><b>0.82–0.83</b><span>Accuracy, cross-validated</span></div>
@@ -262,6 +257,8 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:.85rem;border-top:1p
       <div class="row"><h3>Local LLM Writing Assistant, built three ways</h3><span class="when">Nov 2026</span></div>
       <p class="sub">Personal project</p>
       <p>An offline assistant that drafts emails and corrects English grammar, running on a 4-bit quantized 4B model through Ollama, so no text leaves the computer. I built the same application three times to compare what each framework adds.</p>
+      <p style="margin:0 0 14px"><a class="btn primary" href="llm-demo/">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>See recorded runs</a></p>
       <ul class="series">
         <li><a href="https://github.com/rizwannazir333/ollama-writing-assistant">Part 1: Plain Ollama</a><code>about 140 lines, few-shot prompting</code></li>
         <li><a href="https://github.com/rizwannazir333/langchain-writing-assistant">Part 2: LangChain</a><code>chains, structured output, memory, tool-using agent</code></li>
@@ -275,6 +272,10 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:.85rem;border-top:1p
       <ul class="chips" aria-label="Tools used">
         <li>Python</li><li>Ollama</li><li>LangChain</li><li>LangGraph</li><li>Pydantic</li><li>GitHub Actions</li>
       </ul>
+      <div class="links">
+        <a href="llm-demo/"><b>See recorded runs</b></a>
+        <a href="https://github.com/rizwannazir333/langgraph-writing-assistant#workflow-graph">Workflow graph</a>
+      </div>
     </article>
   </section>
 
