@@ -59,7 +59,7 @@ Relevant courses: Artificial Intelligence, Machine Learning, Data Structures & A
 
 - **Trustworthy and explainable AI:** faithful, stable explanations and well-calibrated predictions that people can rely on
 - **Machine learning for healthcare:** risk prediction that holds up across patient groups and hospitals
-- **NLP and large language models:** LLM agents, tool use and evaluation; extracting information from text, including clinical notes
+- **Human-centred NLP and large language models:** how the quality of human feedback shapes NLP models; LLM agents with human approval; extracting information from text, including clinical notes
 - **Computer vision:** image classification and analysis, including medical imaging
 - **Data-centric AI:** learning from missing, imbalanced, small or noisy data, and building high-quality annotated datasets
 - **Robust evaluation and generalisation:** testing whether models still work beyond their training data, across groups and settings
@@ -77,9 +77,9 @@ Relevant courses: Artificial Intelligence, Machine Learning, Data Structures & A
 | Area | Skills |
 | --- | --- |
 | ML methods | Logistic regression, random forests, neural networks, cross-validation, imputation, feature engineering, hyperparameter tuning |
-| AI areas | Computer vision, NLP, chatbots, data annotation, explainable AI |
+| AI areas | Computer vision, NLP, chatbots, data annotation and label quality, explainable AI |
 | Evaluation | ROC-AUC, precision, recall, F1-score, confusion matrices, permutation feature importance, model cards |
-| ML libraries | scikit-learn, TensorFlow, Keras, Pandas, NumPy, Matplotlib, Seaborn |
+| ML libraries | scikit-learn, TensorFlow, Keras, Pandas, NumPy, Matplotlib, Seaborn, Hugging Face Datasets |
 | LLMs | Few-shot prompting, structured output, tool-using agents, human-in-the-loop; Ollama, LangChain, LangGraph, Pydantic |
 | Software | Python, SQL, Flask, MySQL, Git, GitHub Actions (CI), pytest, Jupyter, Python automation |
 
