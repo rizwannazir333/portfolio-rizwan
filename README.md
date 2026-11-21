@@ -26,6 +26,17 @@ Research project · Final Year Project, BS Hons Software Engineering · Grade A 
 - Measured permutation feature importance on held-out folds; both models ranked major vessels, chest pain type and thalassemia among the strongest predictors.
 - Wrote a model card on intended use and limitations; built a Flask and MySQL web app with tests and CI.
 
+### [How Human Feedback Quality Affects NLP Models](https://github.com/rizwannazir333/human-feedback-nlp)
+
+Research project · Independent study, human-centred NLP · Nov 2026
+
+![Effect of annotation errors on macro-F1, rare-class F1 and explanations](assets/feedback_quality.png)
+
+- Trained an explainable emotion classifier (TF-IDF and logistic regression) on 16,000 sentences after corrupting 0–40% of the training labels, at random or by swapping similar emotions, to simulate imperfect annotators.
+- At the same 40% error rate, random errors cost 0.07 macro-F1, while errors between similar emotions cost 0.29 (0.73 → 0.44).
+- The rarest emotion reached F1 0.39 with standard training; balanced class weights raised it to 0.71 and kept it near 0.67 under heavy label noise.
+- With only 10% label errors, about a third of each class's top explanatory words changed, even when accuracy barely moved.
+
 ### Local LLM Writing Assistant, built three ways
 
 Software project · Personal project · Nov 2026

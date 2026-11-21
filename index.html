@@ -292,6 +292,34 @@ footer a{color:var(--muted)}
     </article>
 
     <article class="card project">
+      <span class="tag">Research project</span>
+      <div class="row"><h3>How Human Feedback Quality Affects NLP Models</h3><span class="when">Nov 2026</span></div>
+      <p class="sub">Independent study · human-centred NLP</p>
+      <p>Models learn from human annotations, and annotators make mistakes. I trained an explainable emotion classifier (TF-IDF and logistic regression) on 16,000 sentences after corrupting 0–40% of the training labels, either at random or by swapping similar emotions, as a hesitant annotator might, and measured what happened to rare classes and to the model's explanations.</p>
+      <div class="actions">
+        <a class="btn primary" href="https://github.com/rizwannazir333/human-feedback-nlp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.6 16.6L4 12l4.6-4.6L7.2 6 1.2 12l6 6zm6.8 0L20 12l-4.6-4.6L16.8 6l6 6-6 6z"/></svg>Code and README</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>0.73 → 0.44</b><span>Macro-F1 with 40% errors between similar emotions</span></div>
+        <div class="stat"><b>0.39 → 0.71</b><span>F1 for the rarest emotion with balanced class weights</span></div>
+        <div class="stat"><b>~⅓</b><span>Top explanatory words that change with 10% label errors</span></div>
+      </div>
+      <figure>
+        <img src="assets/feedback_quality.png" alt="Three line charts against annotation error rate from 0 to 40 percent. Macro-F1 falls fastest for the standard model with errors between similar emotions. F1 for the rare emotion surprise stays near 0.7 for the balanced model with similar-emotion errors. Explanation overlap with the clean model drops to about 0.65 at 10 percent errors for every setting." loading="lazy" width="2250" height="630">
+        <figcaption>Clean test-set results for each type and rate of annotation error. Solid lines: standard training; dashed lines: balanced class weights.</figcaption>
+      </figure>
+      <ul class="pts">
+        <li>The type of error mattered more than the amount: at the same 40% rate, random errors cost 0.07 macro-F1, while errors between similar emotions cost 0.29.</li>
+        <li>Overall scores hid minority-class failure. The rarest emotion, <i>surprise</i> (572 of 16,000 examples), reached F1 0.39 with standard training; balanced class weights raised it to 0.71.</li>
+        <li>Explanations were fragile: with only 10% label errors, about a third of each class's top-10 words changed, even when accuracy barely moved.</li>
+        <li>Next steps: real multi-annotator data, several random seeds, a fine-tuned transformer, and asking users which explanations they find useful.</li>
+      </ul>
+      <ul class="chips" aria-label="Tools used">
+        <li>Python</li><li>scikit-learn</li><li>Hugging Face Datasets</li><li>Pandas</li><li>Matplotlib</li>
+      </ul>
+    </article>
+
+    <article class="card project">
       <span class="tag">Software project</span>
       <div class="row"><h3>Local LLM Writing Assistant, built three ways</h3><span class="when">Nov 2026</span></div>
       <p class="sub">Personal project</p>
@@ -330,7 +358,7 @@ footer a{color:var(--muted)}
     <ul class="interests">
       <li><b>Trustworthy and explainable AI</b>Faithful, stable explanations and well-calibrated predictions that people can rely on.</li>
       <li><b>Machine learning for healthcare</b>Risk prediction that holds up across patient groups and hospitals.</li>
-      <li><b>NLP and large language models</b>LLM agents, tool use and evaluation; extracting information from text, including clinical notes.</li>
+      <li><b>Human-centred NLP and large language models</b>How the quality of human feedback shapes NLP models; LLM agents with human approval; extracting information from text, including clinical notes.</li>
       <li><b>Computer vision</b>Image classification and analysis, including medical imaging.</li>
       <li><b>Data-centric AI</b>Learning from missing, imbalanced, small or noisy data, and building high-quality annotated datasets.</li>
       <li><b>Robust evaluation and generalisation</b>Testing whether models still work beyond their training data, across groups and settings.</li>
@@ -368,6 +396,7 @@ footer a{color:var(--muted)}
     <ul class="pts">
       <li><b>Explanations for single patients.</b> Permutation importance tells me what matters on average. A doctor needs to know why the model flagged this particular patient, so I want to compare per-patient methods such as SHAP and check whether their explanations stay stable.</li>
       <li><b>Probabilities that mean what they say.</b> My risk levels are fixed cut-offs on an averaged probability. I want to learn how to calibrate models so that a predicted 70% risk really corresponds to about 70% of patients.</li>
+      <li><b>Learning from imperfect human feedback.</b> My annotation study showed that realistic disagreement between similar labels hurts models far more than random mistakes, and quietly changes their explanations. I want to study this with real multi-annotator data and find ways to collect and use feedback that protect rare classes.</li>
       <li><b>Will it work somewhere else?</b> I have not yet checked performance across age and sex groups or on data from another hospital. Testing for this kind of failure is, I think, the most important step before any clinical model is trusted.</li>
     </ul>
   </section>
