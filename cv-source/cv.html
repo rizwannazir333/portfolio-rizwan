@@ -124,7 +124,7 @@ h2 { break-after: avoid; }
 <h2>Profile</h2>
 <p style="margin:0">Software Engineering graduate and AI Engineer Intern at TechGeneyes. I build and evaluate machine learning models that are reliable, explainable and useful in the real world, and I am seeking a Master's degree to research trustworthy AI across machine learning, NLP and computer vision.</p>
 
-<h2>Research projects</h2>
+<h2>Projects</h2>
 <div class="entry">
   <div class="row"><h3>Heart Disease Risk Prediction Using Machine Learning and Deep Learning</h3><span class="when">Jul 2025 – Jul 2026</span></div>
   <p class="sub">Final year project, BS Hons Software Engineering, Virtual University of Pakistan · Grade A</p>
@@ -138,17 +138,17 @@ h2 { break-after: avoid; }
   </ul>
 </div>
 <div class="entry">
-  <div class="row"><h3>Learning from Noisy and Imbalanced Labels in Emotion Classification</h3><span class="when">Nov 2026</span></div>
-  <p class="sub">Independent study · Python, scikit-learn, Hugging Face Datasets</p>
-  <p class="links">Code and results: <a href="https://github.com/rizwannazir333/portfolio-rizwan/tree/main/noisy-labels-nlp">github.com/rizwannazir333/portfolio-rizwan/tree/main/noisy-labels-nlp</a></p>
+  <div class="row"><h3>Emotion Detection from Text</h3><span class="when">Nov 2026</span></div>
+  <p class="sub">NLP project · Python, scikit-learn, Hugging Face Datasets</p>
+  <p class="links">Code and results: <a href="https://github.com/rizwannazir333/portfolio-rizwan/tree/main/emotion-detection-nlp">github.com/rizwannazir333/portfolio-rizwan/tree/main/emotion-detection-nlp</a></p>
   <ul>
-    <li>Trained an explainable emotion classifier (TF-IDF and logistic regression) on 16,000 sentences after corrupting 0–40% of the training labels, at random or by swapping similar emotions, to simulate imperfect annotators.</li>
-    <li>At a 40% error rate, errors between similar emotions cut macro-F1 from <b class="num">0.73 to 0.44</b>, while random errors cost only 0.07.</li>
-    <li>Balanced class weights raised F1 for the rarest emotion from 0.39 to <b class="num">0.71</b>; with 10% label errors, about a third of each class's top explanatory words changed.</li>
+    <li>Built a model that predicts the emotion of a sentence (6 emotions) with TF-IDF and logistic regression, trained on 16,000 sentences.</li>
+    <li>Rare emotions were the weak point: balanced class weights raised F1 for <i>surprise</i> from 0.39 to <b class="num">0.71</b> and average F1 from 0.72 to <b class="num">0.83</b>.</li>
+    <li>Made 10–30% of training labels wrong on purpose; average F1 fell step by step from 0.83 to 0.71.</li>
   </ul>
 </div>
 
-<h2>Software project</h2>
+
 <div class="entry">
   <div class="row"><h3>Local LLM Writing Assistant: one application built three ways</h3><span class="when">Nov 2026</span></div>
   <p class="sub">Personal project · Python, Ollama, LangChain, LangGraph</p>

@@ -1,0 +1,37 @@
+Training sentences per emotion:
+  sadness    4666
+  joy        5362
+  love       1304
+  anger      2159
+  fear       1937
+  surprise    572
+
+standard model: average F1 = 0.72
+  sadness   F1 = 0.89
+  joy       F1 = 0.86
+  love      F1 = 0.61
+  anger     F1 = 0.81
+  fear      F1 = 0.79
+  surprise  F1 = 0.39
+
+balanced model: average F1 = 0.83
+  sadness   F1 = 0.90
+  joy       F1 = 0.89
+  love      F1 = 0.79
+  anger     F1 = 0.88
+  fear      F1 = 0.85
+  surprise  F1 = 0.71
+
+Words the balanced model uses for each emotion:
+  sadness   melancholy, miserable, lethargic, awkward, punished, gloomy, exhausted, shitty
+  joy       successful, innocent, glad, satisfied, rich, popular, divine, pleasant
+  love      loving, sympathetic, caring, nostalgic, hot, naughty, horny, sweet
+  anger     dangerous, greedy, irritable, offended, violent, dissatisfied, rude, cold
+  fear      shaken, terrified, vulnerable, nervous, paranoid, scared, uncertain, reluctant
+  surprise  amazed, impressed, curious, surprised, shocked, funny, overwhelmed, amazing
+
+Wrong training labels (balanced model):
+  0% wrong labels: average F1 = 0.83
+  10% wrong labels: average F1 = 0.80
+  20% wrong labels: average F1 = 0.76
+  30% wrong labels: average F1 = 0.71

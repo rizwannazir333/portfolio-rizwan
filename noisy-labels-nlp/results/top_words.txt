@@ -1,6 +1,0 @@
-sadness: melancholy, miserable, lethargic, gloomy, punished, dull, awkward, exhausted, shitty, disheartened
-joy: innocent, successful, pleasant, popular, superior, satisfied, sincere, resolved, glad, divine
-love: loving, sympathetic, nostalgic, caring, naughty, hot, horny, lovely, delicate, longing
-anger: dangerous, greedy, irritable, violent, dissatisfied, rude, offended, bothered, fucked, cold
-fear: terrified, shaken, vulnerable, nervous, paranoid, reluctant, uncertain, scared, shaky, apprehensive
-surprise: amazed, impressed, curious, surprised, shocked, funny, overwhelmed, weird, strange, dazed
