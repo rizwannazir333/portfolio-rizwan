@@ -1,0 +1,12 @@
+{
+  "name": "cv-source",
+  "private": true,
+  "description": "Builds the Academic CV PDFs",
+  "scripts": {
+    "build": "node build-cv.js"
+  },
+  "dependencies": {
+    "pdf-lib": "^1.17.1",
+    "playwright": "1.48.2"
+  }
+}
