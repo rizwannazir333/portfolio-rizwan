@@ -1,6 +1,6 @@
-# How Human Feedback Quality Affects NLP Models
+# Learning from Noisy and Imbalanced Labels in Emotion Classification
 
-A small, reproducible study of a question at the centre of human-centred NLP:
+A small, reproducible study of a practical question in NLP:
 **when the people who label data make mistakes, what happens to the model, to rare classes, and to the model's explanations?**
 
 I train an explainable text classifier on the public
@@ -59,7 +59,7 @@ Full results for every setting are in [`results/results.csv`](results/results.cs
 ## Run it
 
 ```bash
-cd human-feedback-nlp
+cd noisy-labels-nlp
 pip install -r requirements.txt
 python src/run_experiment.py
 ```

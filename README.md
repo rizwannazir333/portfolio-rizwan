@@ -26,9 +26,9 @@ Research project · Final Year Project, BS Hons Software Engineering · Grade A 
 - Measured permutation feature importance on held-out folds; both models ranked major vessels, chest pain type and thalassemia among the strongest predictors.
 - Wrote a model card on intended use and limitations; built a Flask and MySQL web app with tests and CI.
 
-### [How Human Feedback Quality Affects NLP Models](human-feedback-nlp/)
+### [Learning from Noisy and Imbalanced Labels in Emotion Classification](noisy-labels-nlp/)
 
-Research project · Independent study, human-centred NLP · Nov 2026
+Research project · Independent study, NLP · Nov 2026
 
 ![Effect of annotation errors on macro-F1, rare-class F1 and explanations](assets/feedback_quality.png)
 
