@@ -4,7 +4,7 @@
 
 **Portfolio website: https://rizwannazir333.github.io/portfolio-rizwan/**
 
-Junior Data Scientist at IFFCO Group, a food manufacturing company in the UAE, and Software Engineering graduate. I analyse data and build machine learning models that are reliable, explainable and useful in the real world, and I am seeking a Master's degree to research trustworthy AI across machine learning, NLP and computer vision.
+Junior Data Scientist at IFFCO Group, a food manufacturing company in the UAE, and Software Engineering graduate. I analyse data and build machine learning models that are reliable, explainable and useful in the real world, and I am seeking a Master of Research to study trustworthy, human-centred AI, starting with calibrated and explainable risk prediction for health.
 
 BS Hons Software Engineering · CGPA 3.66 / 4.00 · Abu Dhabi, UAE · Master's 2027: AI · Machine Learning · Computer Science
 
@@ -56,7 +56,7 @@ Relevant courses: Artificial Intelligence, Machine Learning, Data Structures & A
 
 ## Research interests
 
-- **Trustworthy and explainable AI:** faithful, stable explanations and well-calibrated predictions that people can rely on
+- **Trustworthy and explainable AI:** faithful, stable explanations and well-calibrated predictions, tested with the people who use them
 - **Machine learning for healthcare:** risk prediction that holds up across patient groups and hospitals
 - **Human-centred NLP and large language models:** how the quality of human feedback shapes NLP models; LLM agents with human approval; extracting information from text, including clinical notes
 - **Computer vision:** image classification and analysis, including medical imaging
