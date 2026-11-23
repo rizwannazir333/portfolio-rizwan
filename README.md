@@ -1,10 +1,10 @@
 # Rizwan Ali
 
-**AI Engineer · Machine Learning · Deep Learning · NLP · LLMs & AI Agents · Chatbots · Explainable AI · Python**
+**AI Engineer · Data Analytics · Machine Learning · Deep Learning · NLP · LLMs & AI Agents · Chatbots · Explainable AI · Python**
 
 **Portfolio website: https://rizwannazir333.github.io/portfolio-rizwan/**
 
-Software Engineering graduate and AI Engineer Intern at TechGeneyes. I build and evaluate machine learning models that are reliable, explainable and useful in the real world, and I am seeking a Master's degree to research trustworthy AI across machine learning, NLP and computer vision.
+AI Engineer at IFFCO Group, a food manufacturing company in the UAE, and Software Engineering graduate. I build and evaluate machine learning models and data analytics that are reliable, explainable and useful in the real world, and I am seeking a Master's degree to research trustworthy AI across machine learning, NLP and computer vision.
 
 BS Hons Software Engineering · CGPA 3.66 / 4.00 · Abu Dhabi, UAE · Master's 2027: AI · Machine Learning · Computer Science
 
@@ -65,22 +65,33 @@ Relevant courses: Artificial Intelligence, Machine Learning, Data Structures & A
 
 ## Experience
 
-**AI Engineer Intern, TechGeneyes** · Remote · Aug 2026 – Present
+**AI Engineer, Data Analytics, IFFCO Group** · UAE · Full-time · Nov 2026 – Present
 
-- Develop and evaluate machine learning and deep learning models with scikit-learn and TensorFlow/Keras.
-- Prepare and explore data, engineer features and tune hyperparameters.
-- Report model performance with precision, recall, F1-score and confusion matrices.
+*Food manufacturing*
+
+- Develop demand and sales forecasting models by product, market and channel to support production planning and inventory decisions.
+- Build machine learning models on production and quality-control data to predict out-of-specification batches, yield losses and waste.
+- Analyse production line data, such as downtime, throughput and energy use, to find the causes of lost output and higher cost.
+- Build Python and SQL data pipelines and automated KPI dashboards on sales, production and quality for operations, supply-chain and management teams.
+- Explore AI use cases in the plant, such as computer vision for packaging and label inspection and LLM assistants for searching SOPs and internal documents.
+
+**AI Engineer Intern, TechGeneyes** · Remote · Aug 2026 – Sep 2026
+
+- Built and evaluated machine learning and deep learning models with scikit-learn and TensorFlow/Keras.
+- Cleaned and explored data, engineered features and tuned hyperparameters with cross-validation.
+- Reported model performance with precision, recall, F1-score and confusion matrices, and documented results for the team.
 
 ## Technical skills
 
 | Area | Skills |
 | --- | --- |
 | ML methods | Logistic regression, random forests, neural networks, cross-validation, imputation, feature engineering, hyperparameter tuning |
-| AI areas | Computer vision, NLP, chatbots, data annotation and label quality, explainable AI |
+| Data analytics | Exploratory data analysis, demand forecasting, root-cause analysis, KPI dashboards and reporting, SQL, data pipelines and report automation with Python |
+| AI areas | Computer vision, NLP, chatbots, data annotation and label quality, explainable AI, AI for manufacturing |
 | Evaluation | ROC-AUC, precision, recall, F1-score, confusion matrices, permutation feature importance, model cards |
 | ML libraries | scikit-learn, TensorFlow, Keras, Pandas, NumPy, Matplotlib, Seaborn, Hugging Face Datasets |
 | LLMs | Few-shot prompting, structured output, tool-using agents, human-in-the-loop; Ollama, LangChain, LangGraph, Pydantic |
-| Software | Python, SQL, Flask, MySQL, Git, GitHub Actions (CI), pytest, Jupyter, Python automation |
+| Software | Python, SQL, Flask, MySQL, Git, GitHub Actions (CI), pytest, Jupyter |
 
 ## Languages and references
 
