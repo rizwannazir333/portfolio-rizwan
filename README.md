@@ -1,10 +1,10 @@
 # Rizwan Ali
 
-**AI Engineer · Data Analytics · Machine Learning · Deep Learning · NLP · LLMs & AI Agents · Chatbots · Explainable AI · Python**
+**Junior Data Scientist · Data Science · Data Analytics · Machine Learning · Deep Learning · NLP · LLMs & AI Agents · Chatbots · Explainable AI · Python**
 
 **Portfolio website: https://rizwannazir333.github.io/portfolio-rizwan/**
 
-AI Engineer at IFFCO Group, a food manufacturing company in the UAE, and Software Engineering graduate. I build and evaluate machine learning models and data analytics that are reliable, explainable and useful in the real world, and I am seeking a Master's degree to research trustworthy AI across machine learning, NLP and computer vision.
+Junior Data Scientist at IFFCO Group, a food manufacturing company in the UAE, and Software Engineering graduate. I analyse data and build machine learning models that are reliable, explainable and useful in the real world, and I am seeking a Master's degree to research trustworthy AI across machine learning, NLP and computer vision.
 
 BS Hons Software Engineering · CGPA 3.66 / 4.00 · Abu Dhabi, UAE · Master's 2027: AI · Machine Learning · Computer Science
 
@@ -65,15 +65,15 @@ Relevant courses: Artificial Intelligence, Machine Learning, Data Structures & A
 
 ## Experience
 
-**AI Engineer, Data Analytics, IFFCO Group** · UAE · Full-time · Nov 2026 – Present
+**Junior Data Scientist, IFFCO Group** · UAE · Full-time · Nov 2026 – Present
 
 *Food manufacturing*
 
-- Develop demand and sales forecasting models by product, market and channel to support production planning and inventory decisions.
-- Build machine learning models on production and quality-control data to predict out-of-specification batches, yield losses and waste.
-- Analyse production line data, such as downtime, throughput and energy use, to find the causes of lost output and higher cost.
-- Build Python and SQL data pipelines and automated KPI dashboards on sales, production and quality for operations, supply-chain and management teams.
-- Explore AI use cases in the plant, such as computer vision for packaging and label inspection and LLM assistants for searching SOPs and internal documents.
+- Clean, join and analyse sales, production and quality-control data with Python (Pandas) and SQL, and run data quality checks across sources.
+- Build and evaluate demand forecasting models by product and channel, compared against simple baselines, to support production planning and inventory decisions.
+- Explore production and lab data to find drivers of yield loss, waste and out-of-specification batches, and present findings to production and quality teams.
+- Build and maintain KPI dashboards and automated Python reports on sales, production efficiency and quality for operations and management.
+- Work with production, quality and supply-chain teams to turn business questions into analyses, and document data sources, methods and results.
 
 **AI Engineer Intern, TechGeneyes** · Remote · Aug 2026 – Sep 2026
 
@@ -86,8 +86,8 @@ Relevant courses: Artificial Intelligence, Machine Learning, Data Structures & A
 | Area | Skills |
 | --- | --- |
 | ML methods | Logistic regression, random forests, neural networks, cross-validation, imputation, feature engineering, hyperparameter tuning |
-| Data analytics | Exploratory data analysis, demand forecasting, root-cause analysis, KPI dashboards and reporting, SQL, data pipelines and report automation with Python |
-| AI areas | Computer vision, NLP, chatbots, data annotation and label quality, explainable AI, AI for manufacturing |
+| Data science | Exploratory data analysis, statistics, time-series forecasting, root-cause analysis, data quality checks, KPI dashboards and reporting, SQL, report automation with Python |
+| AI areas | Computer vision, NLP, chatbots, data annotation and label quality, explainable AI, data science for food manufacturing |
 | Evaluation | ROC-AUC, precision, recall, F1-score, confusion matrices, permutation feature importance, model cards |
 | ML libraries | scikit-learn, TensorFlow, Keras, Pandas, NumPy, Matplotlib, Seaborn, Hugging Face Datasets |
 | LLMs | Few-shot prompting, structured output, tool-using agents, human-in-the-loop; Ollama, LangChain, LangGraph, Pydantic |
