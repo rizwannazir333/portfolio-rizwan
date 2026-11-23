@@ -8,7 +8,7 @@ AI Engineer at IFFCO Group, a food manufacturing company in the UAE, and Softwar
 
 BS Hons Software Engineering · CGPA 3.66 / 4.00 · Abu Dhabi, UAE · Master's 2027: AI · Machine Learning · Computer Science
 
-[Academic CV (PDF)](assets/Rizwan_Ali_CV_Photo.pdf) · [Europass CV (PDF)](assets/Rizwan_Ali_Europass_CV_Photo.pdf) · [LinkedIn](https://linkedin.com/in/rizwan-ali-ai-engineer) · [GitHub](https://github.com/rizwannazir333) · rizwan_nazir@163.com
+[Academic CV (PDF)](assets/Rizwan_Ali_CV_Photo.pdf) · [Europass CV (PDF)](assets/Rizwan_Ali_Europass_CV_Photo.pdf) · [LinkedIn](https://linkedin.com/in/rizwan-ali-ai-engineer) · [GitHub](https://github.com/rizwannazir333) · rizwan_nazir@163.com · mrizwan8499@gmail.com
 
 ## Projects
 

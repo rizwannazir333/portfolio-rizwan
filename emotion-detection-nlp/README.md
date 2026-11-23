@@ -72,4 +72,4 @@ It takes about one minute on a laptop and writes `results/results.txt` and `resu
 
 ## Author
 
-Rizwan Ali · [Portfolio](https://rizwannazir333.github.io/portfolio-rizwan/) · [GitHub](https://github.com/rizwannazir333) · November 2026
+Rizwan Ali · [Portfolio](https://rizwannazir333.github.io/portfolio-rizwan/) · [GitHub](https://github.com/rizwannazir333) · rizwan_nazir@163.com · mrizwan8499@gmail.com · November 2026
