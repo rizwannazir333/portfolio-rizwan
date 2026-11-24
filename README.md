@@ -4,9 +4,9 @@
 
 **Portfolio website: https://rizwannazir333.github.io/portfolio-rizwan/**
 
-Junior Data Scientist at IFFCO Group, a food manufacturing company in the UAE, and Software Engineering graduate. I analyse data and build machine learning models that are reliable, explainable and useful in the real world, and I am seeking a Master of Research to study trustworthy, human-centred AI, starting with calibrated and explainable risk prediction for health.
+Junior Data Scientist at IFFCO Group, a food manufacturing company in the UAE, and Software Engineering graduate. I analyse data and build machine learning models that are reliable, explainable and useful in the real world. I am applying for the Master of Research in the School of Computer, Data and Mathematical Sciences at Western Sydney University, with a proposed project in reliable and explainable machine learning.
 
-BS Hons Software Engineering · CGPA 3.66 / 4.00 · Abu Dhabi, UAE · Master's 2027: AI · Machine Learning · Computer Science
+BS Hons Software Engineering · CGPA 3.66 / 4.00 · Abu Dhabi, UAE · Master of Research 2027: reliable and explainable machine learning
 
 [Academic CV (PDF)](assets/Rizwan_Ali_CV_Photo.pdf) · [Europass CV (PDF)](assets/Rizwan_Ali_Europass_CV_Photo.pdf) · [LinkedIn](https://linkedin.com/in/rizwan-ali-ai-engineer) · [GitHub](https://github.com/rizwannazir333) · rizwan_nazir@163.com · mrizwan8499@gmail.com
 
